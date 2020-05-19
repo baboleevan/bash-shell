@@ -1511,11 +1511,7 @@ $ seq <span class="hljs-number">10</span> | paste <span class="hljs-operator">-s
 <span class="hljs-number">3</span>
 <span class="hljs-number">4</span>
 <span class="hljs-number">5</span>
-<span class="hljs-number">6</span>
-<span class="hljs-number">7</span>
-<span class="hljs-number">8</span>
-<span class="hljs-number">9</span>
-<span class="hljs-number">10</span>
+...
 
 $ <span class="hljs-built_in">echo</span> $(seq <span class="hljs-number">10</span>) | xargs -n2
 <span class="hljs-number">1</span> <span class="hljs-number">2</span>
@@ -1523,6 +1519,22 @@ $ <span class="hljs-built_in">echo</span> $(seq <span class="hljs-number">10</sp
 <span class="hljs-number">5</span> <span class="hljs-number">6</span>
 <span class="hljs-number">7</span> <span class="hljs-number">8</span>
 <span class="hljs-number">9</span> <span class="hljs-number">10</span>
+
+$ <span class="hljs-built_in">echo</span> $(seq <span class="hljs-number">10</span>) | sed <span class="hljs-string">&apos;s/[ \t]\+/\n/g&apos;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+...
+
+$ <span class="hljs-built_in">echo</span> $(seq <span class="hljs-number">10</span>) | awk <span class="hljs-string">&apos;{ for ( i=1; i&lt;=NF; i++ ) print $i }&apos;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+...
 </code></pre>
 <p><code>ls *.txt</code>  &#xC640;  <code>echo *.txt</code>  &#xB450; &#xBA85;&#xB839;&#xC744; &#xD504;&#xB86C;&#xD504;&#xD2B8; &#xC0C1;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xBA74;
 &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xAC00;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xB294;&#xB370;&#xC694;.
