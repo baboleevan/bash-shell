@@ -1295,7 +1295,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span 
 foo       bar
 zoo
 
------------------------
+-------------------------------------
 
 $ ARR=(<span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-string">&quot;33     44&quot;</span> <span class="hljs-number">55</span>)
 
@@ -1310,7 +1310,7 @@ $ ( IFS=: BB=<span class="hljs-variable">${ARR[*]}</span>; <span class="hljs-bui
 $ ( IFS=: BB=<span class="hljs-variable">${ARR[@]}</span>; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$BB</span>&quot;</span>  )
 <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>     <span class="hljs-number">44</span> <span class="hljs-number">55</span>
 
------------------------
+-------------------------------------
 
 $ touch AA=<span class="hljs-number">100</span>
 $ AA=*           <span class="hljs-comment"># &#xB300;&#xC785;&#xC5F0;&#xC0B0; &#xC5D0;&#xC11C;&#xB294; globbing &#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
