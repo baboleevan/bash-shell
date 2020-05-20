@@ -1272,29 +1272,29 @@ index &#xC5D0;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD655;&#xC7A5;, &#xBA8
 
 AA=( <span class="hljs-number">11</span> <span class="hljs-string">&quot;hello array&quot;</span> <span class="hljs-number">22</span> )
 
-index=<span class="hljs-number">2</span>
+var=<span class="hljs-number">2</span>                <span class="hljs-comment"># index &#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;</span>
 
-AA=( [<span class="hljs-number">0</span>]=<span class="hljs-number">11</span> [<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [index]=<span class="hljs-number">22</span> )
+AA=( [<span class="hljs-number">0</span>]=<span class="hljs-number">11</span> [<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [var]=<span class="hljs-number">22</span> )
 
 AA[<span class="hljs-number">0</span>]=<span class="hljs-number">11</span>
 AA[<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span>
-AA[index]=<span class="hljs-number">22</span>         <span class="hljs-comment"># indexed array &#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &apos;$&apos; &#xB97C; &#xBD99;&#xC774;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
+AA[var]=<span class="hljs-number">22</span>           <span class="hljs-comment"># indexed array &#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &apos;$&apos; &#xB97C; &#xBD99;&#xC774;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</span>
 ...................
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[index]}</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[var]}</span>
 <span class="hljs-number">22</span>
 
 <span class="hljs-comment">############# associative array ##############</span>
 
 <span class="hljs-built_in">declare</span> -A BB        <span class="hljs-comment"># &#xBA3C;&#xC800; declare -A &#xB85C; &#xC120;&#xC5B8;</span>
 
-index=ef
+var=ef               <span class="hljs-comment"># index &#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;</span>
 
-BB=( [ab]=<span class="hljs-number">11</span> [<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [<span class="hljs-variable">$index</span>]=<span class="hljs-number">22</span> )
+BB=( [ab]=<span class="hljs-number">11</span> [<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [<span class="hljs-variable">$var</span>]=<span class="hljs-number">22</span> )
 
 BB[ab]=<span class="hljs-number">11</span>
 BB[<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span>
-BB[<span class="hljs-variable">$index</span>]=<span class="hljs-number">22</span>        <span class="hljs-comment"># associative array &#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &apos;$&apos; &#xB97C; &#xBD99;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.</span>
+BB[<span class="hljs-variable">$var</span>]=<span class="hljs-number">22</span>          <span class="hljs-comment"># associative array &#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xB54C; &apos;$&apos; &#xB97C; &#xBD99;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.</span>
 
 key1=foo key2=bar key3=zoo value=<span class="hljs-number">100</span>
 BB[<span class="hljs-variable">$key1</span>,<span class="hljs-variable">$key2</span>,<span class="hljs-variable">$key3</span>]=<span class="hljs-variable">$value</span>
