@@ -1272,9 +1272,9 @@ index &#xC5D0;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD655;&#xC7A5;, &#xBA8
 
 AA=( <span class="hljs-number">11</span> <span class="hljs-string">&quot;hello array&quot;</span> <span class="hljs-number">22</span> )
 
-AA=( [<span class="hljs-number">0</span>]=<span class="hljs-number">11</span> [<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [<span class="hljs-number">2</span>]=<span class="hljs-number">22</span> )
-
 index=<span class="hljs-number">2</span>
+
+AA=( [<span class="hljs-number">0</span>]=<span class="hljs-number">11</span> [<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [index]=<span class="hljs-number">22</span> )
 
 AA[<span class="hljs-number">0</span>]=<span class="hljs-number">11</span>
 AA[<span class="hljs-number">1</span>]=<span class="hljs-string">&quot;hello array&quot;</span>
@@ -1288,9 +1288,9 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[index
 
 <span class="hljs-built_in">declare</span> -A BB        <span class="hljs-comment"># &#xBA3C;&#xC800; declare -A &#xB85C; &#xC120;&#xC5B8;</span>
 
-BB=( [ab]=<span class="hljs-number">11</span> [<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [ef]=<span class="hljs-number">22</span> )
-
 index=ef
+
+BB=( [ab]=<span class="hljs-number">11</span> [<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span> [<span class="hljs-variable">$index</span>]=<span class="hljs-number">22</span> )
 
 BB[ab]=<span class="hljs-number">11</span>
 BB[<span class="hljs-built_in">cd</span>]=<span class="hljs-string">&quot;hello array&quot;</span>
