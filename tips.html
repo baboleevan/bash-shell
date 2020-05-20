@@ -1290,9 +1290,10 @@ $ DD=/home/<span class="hljs-built_in">test</span>/<span class="hljs-variable">$
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$DD</span>&quot;</span>
 /home/<span class="hljs-built_in">test</span>/foo          bar
 
-$ EE=$(<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;foo          bar&quot;</span>)
+$ EE=$( <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;foo       bar\tzoo&quot;</span> | sed <span class="hljs-string">&apos;s/\t/\n/&apos;</span> )     <span class="hljs-comment"># &#xBA85;&#xB839; &#xCE58;&#xD658;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$EE</span>&quot;</span>
-foo          bar
+foo       bar
+zoo
 
 -----------------------
 
