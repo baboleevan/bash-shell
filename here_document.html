@@ -1637,7 +1637,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span 
 <span class="hljs-number">0000004</span>
 </code></pre>
 <h1 id="quiz">Quiz</h1>
-<p>&#xC258; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xC5EC; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xBA74;?</p>
+<p>&#xC258; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xC5EC; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <h4 id="base64-&#xB97C;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;">base64 &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
 <p>base64 &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; binary &#xD30C;&#xC77C;&#xC774; &#xD14D;&#xC2A4;&#xD2B8;&#xB85C; &#xBCC0;&#xD658;&#xB418;&#xBBC0;&#xB85C; &#xC774; &#xBC29;&#xBC95;&#xC740; binary &#xD30C;&#xC77C;&#xC744; &#xC804;&#xC1A1;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><b>1</b> . &#xBA3C;&#xC800; base64 &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; binary &#xD30C;&#xC77C;&#xC744; &#xD14D;&#xC2A4;&#xD2B8;&#xB85C; &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1667,7 +1667,7 @@ ANoAYAAAAAAA2gAAAAAAAAAOAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAADAAAA
 AAAAAAAAAAAAAAAAAAAAAOgAAAAAAAAAFwAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=
 END
 
-chmod +x <span class="hljs-string">&quot;<span class="hljs-variable">$tmpFile</span>&quot;</span> &amp;&amp; <span class="hljs-string">&quot;<span class="hljs-variable">$tmpFile</span>&quot;</span> 
+chmod +x <span class="hljs-variable">$tmpFile</span> &amp;&amp; <span class="hljs-variable">$tmpFile</span>
 
 <span class="hljs-built_in">echo</span> end...
 </code></pre>
@@ -1707,7 +1707,7 @@ tail -c <span class="hljs-number">512</span> <span class="hljs-string">&quot;<sp
 <span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; append &#xB41C; &#xD30C;&#xC77C;&#xC774; tar &#xC555;&#xCD95; &#xD30C;&#xC77C;&#xC774;&#xB77C;&#xBA74;</span>
 <span class="hljs-comment"># cd `mktemp -d` &amp;&amp; tail -c 512 &quot;$scriptFile&quot; | tar xvz</span>
 
-( chmod +x <span class="hljs-string">&quot;<span class="hljs-variable">$tmpFile</span>&quot;</span>; <span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;<span class="hljs-variable">$tmpFile</span>&quot;</span> )
+chmod +x <span class="hljs-variable">$tmpFile</span> &amp;&amp; <span class="hljs-variable">$tmpFile</span>
 
 <span class="hljs-comment"># &#xB9C8;&#xC9C0;&#xB9C9;&#xC740; &#xBC18;&#xB4DC;&#xC2DC; exit &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC885;&#xB8CC;</span>
 <span class="hljs-built_in">exit</span>
