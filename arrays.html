@@ -1386,7 +1386,11 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[@]}</
                              <span class="hljs-number">100</span> <span class="hljs-number">11</span> <span class="hljs-number">22</span>
 </code></pre>
 <h3 id="--&#xCC28;&#xC774;&#xC810;">@ , * &#xCC28;&#xC774;&#xC810;</h3>
-<p>Double quotes &#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC744;&#xACBD;&#xC6B0; <code>${array[@]}</code> &#xC640; <code>${array[*]}</code> &#xB294; &#xCC28;&#xC774;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xB611;&#xAC19;&#xC774; IFS &#xAC12;&#xC5D0;&#xC758;&#xD574; &#xB2E8;&#xC5B4;&#xBD84;&#xB9AC;&#xAC00; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>&quot; &quot;</code> &#xB85C; quote &#xD558;&#xC600;&#xC744;&#xACBD;&#xC6B0; <code>@</code> &#xC640; <code>*</code> &#xB294; &#xC758;&#xBBF8;&#xAC00; &#xB2EC;&#xB77C;&#xC9D1;&#xB2C8;&#xB2E4;.  <code>&quot;array[@]&quot;</code> &#xB294; array &#xAC1C;&#xAC1C;&#xC758; &#xC6D0;&#xC18C;&#xB97C; <code>&quot; &quot;</code> &#xB85C; quote &#xD558;&#xC5EC; &#xB098;&#xC5F4;&#xD558;&#xB294;&#xAC83;&#xACFC; &#xAC19;&#xACE0; <code>&quot;array[*]&quot;</code> &#xB294; array &#xC758; &#xBAA8;&#xB4E0;&#xC6D0;&#xC18C;&#xB97C; &#xD558;&#xB098;&#xC758; <code>&quot; &quot;</code> &#xC548;&#xC5D0; IFS &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xD558;&#xC5EC; &#xB123;&#xB294;&#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+<p>Double quotes &#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; <code>${array[@]}</code> &#xC640; <code>${array[*]}</code> &#xB294; &#xCC28;&#xC774;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xB611;&#xAC19;&#xC774; IFS &#xAC12;&#xC5D0; &#xC758;&#xD574; &#xB2E8;&#xC5B4; &#xBD84;&#xB9AC;&#xAC00; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. 
+&#xD558;&#xC9C0;&#xB9CC; quote &#xD558;&#xC600;&#xC744; &#xACBD;&#xC6B0;&#xB294; <code>@</code> &#xC640; <code>*</code> &#xB294; &#xC758;&#xBBF8;&#xAC00; &#xB2EC;&#xB77C;&#xC9D1;&#xB2C8;&#xB2E4;.
+<code>&quot;array[@]&quot;</code> &#xB294; array &#xAC1C;&#xAC1C;&#xC758; &#xC6D0;&#xC18C;&#xB97C; <code>&quot; &quot;</code> &#xB85C; quote &#xD558;&#xC5EC; &#xB098;&#xC5F4;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xACE0;, 
+<code>&quot;array[*]&quot;</code> &#xB294; array &#xC758; &#xBAA8;&#xB4E0; &#xC6D0;&#xC18C;&#xB97C; &#xD558;&#xB098;&#xC758; <code>&quot; &quot;</code> &#xC548;&#xC5D0; IFS &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xD558;&#xC5EC; &#xB123;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 <table>
 <thead>
 <tr>
@@ -1405,7 +1409,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">${AA[@]}</
 </tr>
 <tr>
 <td><code>&quot;${AA[*]}&quot;</code></td>
-<td>&quot;${AA[0]}X${AA[1]}X${AA[2]}...&quot;<br>&#xC5EC;&#xAE30;&#xC11C; &apos;X&apos; &#xB294; IFS &#xBCC0;&#xC218;&#xAC12; &#xC911;&#xC5D0; &#xCCAB;&#xBC88;&#xC9F8; &#xBB38;&#xC790;</td>
+<td>&quot;${AA[0]}X${AA[1]}X${AA[2]}...&quot;<br>&#xC5EC;&#xAE30;&#xC11C; &apos;X&apos; &#xB294; IFS &#xBCC0;&#xC218;&#xAC12; &#xC911;&#xC5D0; &#xCCAB;  &#xBC88;&#xC9F8; &#xBB38;&#xC790;</td>
 </tr>
 </tbody>
 </table>
@@ -1448,12 +1452,12 @@ Arch     Linux Ubuntu     Linux Fedora     Linux   <span class="hljs-comment"># 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[*]}</span>&quot;</span>
 Arch     Linux Ubuntu     Linux Fedora     Linux
 
-$ <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>; <span class="hljs-keyword">done</span>   <span class="hljs-comment"># &quot;array[@]&quot; &#xB294; &#xC6D0;&#xC18C;&#xAC1C;&#xC218;&#xAC00; &#xC720;&#xC9C0;&#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>; <span class="hljs-keyword">done</span>   <span class="hljs-comment"># &quot;array[@]&quot; &#xB294; &#xC6D0;&#xC18C; &#xAC1C;&#xC218;&#xAC00; &#xC720;&#xC9C0;&#xB41C;&#xB2E4;.</span>
 Arch     Linux
 Ubuntu     Linux
 Fedora     Linux
 
-$ <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[*]}</span>&quot;</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>; <span class="hljs-keyword">done</span>   <span class="hljs-comment"># &quot;array[*]&quot; &#xB294; &#xC6D0;&#xC18C;&#xAC1C;&#xC218;&#xAC00; 1 &#xAC1C;&#xB85C; &#xB098;&#xC628;&#xB2E4;.</span>
+$ <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[*]}</span>&quot;</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$v</span>&quot;</span>; <span class="hljs-keyword">done</span>   <span class="hljs-comment"># &quot;array[*]&quot; &#xB294; &#xC6D0;&#xC18C; &#xAC1C;&#xC218;&#xAC00; 1 &#xAC1C;&#xAC00; &#xB41C;&#xB2E4;.</span>
 Arch     Linux Ubuntu     Linux Fedora     Linux
 </code></pre>
 <p>&#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD560;&#xB54C; <code>${arr[@]}</code> &#xB97C; &#xC778;&#xC218;&#xC5D0; &#xD3EC;&#xD568;&#xC2DC;&#xD0A4;&#xBA74; ?</p>
