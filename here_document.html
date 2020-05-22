@@ -1673,7 +1673,7 @@ chmod +x <span class="hljs-string">&quot;<span class="hljs-variable">$tmpFile</s
 </code></pre>
 <blockquote>
 <p>base64 &#xBA85;&#xB839;&#xC740; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C;&#xC744; &#xD14D;&#xC2A4;&#xD2B8; &#xD30C;&#xC77C;&#xB85C; &#xBCC0;&#xD658;&#xD574; &#xC8FC;&#xB294; &#xC720;&#xD2F8;&#xC785;&#xB2C8;&#xB2E4;.<br>&#xBCC0;&#xD658;&#xD560;&#xB54C; 6 bits &#xB97C; 1 &#xBB38;&#xC790;&#xB85C; &#xBC14;&#xAFB8;&#xB294;&#xB370; &#xC774;&#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC14B;&#xC740; <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>+</code>, <code>/</code> &#xCD1D; 64 &#xBB38;&#xC790; 
-(2^6 = 64) &#xC785;&#xB2C8;&#xB2E4;. ( &#xC774;&#xAC83;&#xC774; &#xBA85;&#xB839; &#xC774;&#xB984;&#xC5D0; &#xBD99;&#xC740; 64 &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4; )
+(2^6 = 64) &#xC785;&#xB2C8;&#xB2E4; ( &#xC774;&#xAC83;&#xC774; &#xBA85;&#xB839; &#xC774;&#xB984;&#xC5D0; &#xBD99;&#xC740; 64 &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4; ).
 &#xC608;&#xB97C; &#xB4E4;&#xC5B4; 3 bytes ( 3 * 8 = 24 bits ) &#xB97C; &#xBCC0;&#xD658;&#xD560; &#xACBD;&#xC6B0; 
 &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; 4 &#xAC1C;&#xC758; &#xBB38;&#xC790;&#xAC00; ( 24 / 6 = 4 ) &#xC0DD;&#xACA8;&#xC11C; 4 bytes &#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xC2E4;&#xC81C; &#xD30C;&#xC77C; &#xBCF4;&#xB2E4; &#xC57D; 33% &#xC815;&#xB3C4; &#xD06C;&#xAE30;&#xAC00; &#xCEE4;&#xC9D1;&#xB2C8;&#xB2E4;.
 base64 &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; hex &#xB85C; &#xBC14;&#xAFBC;&#xB2E4;&#xBA74; 1 byte &#xB2F9; 2 &#xBB38;&#xC790;&#xAC00; &#xD544;&#xC694;&#xD558;&#xBBC0;&#xB85C; &#xD30C;&#xC77C; &#xC0AC;&#xC774;&#xC988;&#xAC00; 2 &#xBC30;&#xAC00; &#xB418;&#xACA0;&#xC8E0;.</p>
@@ -1762,7 +1762,7 @@ $ <span class="hljs-built_in">echo</span> ABCDEFGHIJK | hd <span class="hljs-ope
 <span class="hljs-number">00000002</span>  <span class="hljs-number">43</span> <span class="hljs-number">44</span> <span class="hljs-number">45</span> <span class="hljs-number">46</span>                                     |CDEF|
 <span class="hljs-number">00000006</span>
 </code></pre>
-<p>hex &#xAC12;&#xC774; &#xC544;&#xB2CC; &#xC815;&#xC218;&#xB098; float &#xAC12;&#xC73C;&#xB85C; &#xCD94;&#xCD9C;&#xD558;&#xACE0; &#xC2F6;&#xC73C;&#xBA74;</p>
+<p>hex &#xAC12;&#xC774; &#xC544;&#xB2CC; &#xC815;&#xC218;&#xB098; float &#xAC12;&#xC73C;&#xB85C; &#xCD94;&#xCD9C;&#xD558;&#xACE0; &#xC2F6;&#xC73C;&#xBA74; ( &#xCC38;&#xC870;: <a href="https://youtu.be/BjL0hAvwpSE" target="_blank">hex &#xC5D0;&#xB514;&#xD305;</a> )</p>
 <p><img src="images/here_document_ex.png" alt=""></p>
 <pre><code class="lang-bash"><span class="hljs-comment"># 8 &#xBC14;&#xC774;&#xD2B8; &#xAC74;&#xB108;&#xB6F0;&#xACE0;(-j8), 8 &#xBC14;&#xC774;&#xD2B8;&#xB97C; &#xC77D;&#xC74C;(-N8), &#xAC01;&#xAC01; 4 &#xBC14;&#xC774;&#xD2B8;&#xC529;&#xC744; signed decimal &#xB85C; &#xCC98;&#xB9AC;(-td4) </span>
 <span class="hljs-comment"># x86 cpu &#xB294; little endian &#xC774;&#xBBC0;&#xB85C; 03 00 00 00 &#xAC12;&#xC774; &#xC815;&#xC218;&#xAC12;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB420; &#xB54C;&#xB294;</span>
