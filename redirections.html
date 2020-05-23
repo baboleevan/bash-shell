@@ -1435,15 +1435,15 @@ lrwx------ 1 mug896 mug896 64 07.06.2015 15:56 2 -&gt; /dev/pts/10  # stdout
 $ cat x
 <span class="hljs-number">11111111</span>
 
-$ cat xx
+$ cat y
 <span class="hljs-number">22222222</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-number">33333333</span> &gt;&gt; x &gt;&gt; xx
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">33333333</span> &gt;&gt; x &gt;&gt; y
 
 $ cat x
 <span class="hljs-number">11111111</span>
 
-$ cat xx
+$ cat y
 <span class="hljs-number">22222222</span>
 <span class="hljs-number">33333333</span>
 </code></pre>
