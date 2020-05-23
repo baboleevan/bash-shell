@@ -1554,6 +1554,12 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 <blockquote>
 <p>bc &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB550; obase &#xAC00; ibase &#xC55E;&#xC5D0; &#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
+<h1 id="2">2.</h1>
+<p>shell &#xC5D0;&#xC11C; &#xD55C;&#xAE00; &#xC785;&#xB825;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC544; locale &#xC744; &#xC870;&#xD68C;&#xD574; &#xBCF4;&#xB2C8; <code>POSIX</code> &#xB85C; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; shell &#xC5D0;&#xC11C; &#xD55C;&#xAE00; &#xC785;&#xB825;&#xC774; &#xB420;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">export</span> LANG=C.UTF-<span class="hljs-number">8</span>
+
+$ <span class="hljs-built_in">exec</span> bash      <span class="hljs-comment"># LANG=C.UTF-8 &#xAC12;&#xC73C;&#xB85C; &#xC0C8;&#xB85C; bash &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
 
                     
                     </section>
