@@ -1949,7 +1949,7 @@ sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
 </span>
 <span class="hljs-function"><span class="hljs-title">start</span></span> () {
-    <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo $BASHPID exitstatus: $?&apos;</span> EXIT
+    <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo $BASHPID exitcode: $?&apos;</span> EXIT
     sleep $(( RANDOM % <span class="hljs-number">5</span> ))
     <span class="hljs-built_in">echo</span> working ... <span class="hljs-variable">$BASHPID</span>
     <span class="hljs-built_in">exit</span> $(( RANDOM % <span class="hljs-number">10</span> ))
@@ -1963,18 +1963,18 @@ sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &
 
 $ ./test.sh 
 main: working ... <span class="hljs-number">84103</span>        <span class="hljs-comment"># start &#xD568;&#xC218;&#xC758; &#xBAA8;&#xB4E0; &#xCD9C;&#xB825;&#xC774; sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C;&#xB2E4;.</span>
-main: <span class="hljs-number">84103</span> exitstatus: <span class="hljs-number">6</span>
+main: <span class="hljs-number">84103</span> exitcode: <span class="hljs-number">6</span>
 main: working ... <span class="hljs-number">84102</span>
-main: <span class="hljs-number">84102</span> exitstatus: <span class="hljs-number">1</span>
+main: <span class="hljs-number">84102</span> exitcode: <span class="hljs-number">1</span>
 main: working ... <span class="hljs-number">84101</span>
-main: <span class="hljs-number">84101</span> exitstatus: <span class="hljs-number">5</span>
+main: <span class="hljs-number">84101</span> exitcode: <span class="hljs-number">5</span>
 ALL DONE.
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; redirection &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
 </span>
 <span class="hljs-function"><span class="hljs-title">start</span></span> () {
-    <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo $BASHPID exitstatus: $? &gt;&amp;4&apos;</span> EXIT    <span class="hljs-comment"># &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; FD 4 &#xBC88;&#xC73C;&#xB85C; &#xC804;&#xB2EC;</span>
+    <span class="hljs-built_in">trap</span> <span class="hljs-string">&apos;echo $BASHPID exitcode: $? &gt;&amp;4&apos;</span> EXIT    <span class="hljs-comment"># &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; FD 4 &#xBC88;&#xC73C;&#xB85C; &#xC804;&#xB2EC;</span>
     sleep $(( RANDOM % <span class="hljs-number">5</span> ))
     <span class="hljs-built_in">echo</span> working ... <span class="hljs-variable">$BASHPID</span>
     <span class="hljs-built_in">exit</span> $(( RANDOM % <span class="hljs-number">10</span> ))
@@ -1996,11 +1996,11 @@ ALL DONE.
 
 $ ./<span class="hljs-built_in">test</span>2.sh 
 working ... <span class="hljs-number">83603</span>                <span class="hljs-comment"># &#xC9C1;&#xC811; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB294; &#xCD9C;&#xB825;</span>
-main: <span class="hljs-number">83603</span> exitstatus: <span class="hljs-number">2</span>        <span class="hljs-comment"># &#xD30C;&#xC774;&#xD504;&#xB97C; &#xD1B5;&#xD574; sed &#xB85C; &#xAC00;&#xB294; &#xCD9C;&#xB825;</span>
+main: <span class="hljs-number">83603</span> exitcode: <span class="hljs-number">2</span>          <span class="hljs-comment"># &#xD30C;&#xC774;&#xD504;&#xB97C; &#xD1B5;&#xD574; sed &#xB85C; &#xAC00;&#xB294; &#xCD9C;&#xB825;</span>
 working ... <span class="hljs-number">83605</span>
-main: <span class="hljs-number">83605</span> exitstatus: <span class="hljs-number">6</span>
+main: <span class="hljs-number">83605</span> exitcode: <span class="hljs-number">6</span>
 working ... <span class="hljs-number">83604</span>
-main: <span class="hljs-number">83604</span> exitstatus: <span class="hljs-number">9</span>
+main: <span class="hljs-number">83604</span> exitcode: <span class="hljs-number">9</span>
 ALL DONE.
 </code></pre>
 <p><a name="quiz-pipefail"></a></p>
