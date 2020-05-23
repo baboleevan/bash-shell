@@ -1491,10 +1491,11 @@ exec &#xBA85;&#xB839;&#xC73C;&#xB85C; FD 2 (stderr) &#xB97C; FD 1 (stdin) &#xC73
 <blockquote>
 <p>1&gt; /dev/null &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : /dev/null, FD 2 : stdout )</p>
 </blockquote>
-<p>&#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; <code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB294; /dev/null &#xB85C; &#xAC00;&#xB294;&#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; stdout &#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+<p>&#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; <code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xB294; /dev/null &#xB85C; &#xAC00;&#xB294;&#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0;
+stdout &#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; /dev/null &#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>( exec 2&gt;&amp;1 ; date -@ ) 1&gt; /dev/null</p>
+<p>( exec 2&gt;&amp;1 ; date -@ ) &gt; /dev/null</p>
 </blockquote>
 <hr>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>date -@</code> &#xBA85;&#xB839;&#xC758; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; <code>2&gt; errfile</code> &#xB85C; &#xBC1B;&#xC9C0; &#xC54A;&#xACE0; <code>1&gt; errfile</code> &#xB85C; &#xBC1B;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xC880; &#xBCF5;&#xC7A1;&#xD574; &#xBCF4;&#xC77C; &#xC218; &#xC788;&#xB294;&#xB370; &#xB2E8;&#xACC4;&#xBCC4;&#xB85C; &#xB530;&#xB77C;&#xAC00; &#xBCF4;&#xBA74; &#xC5B4;&#xB835;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
@@ -1505,8 +1506,11 @@ exec &#xBA85;&#xB839;&#xC73C;&#xB85C; FD 2 (stderr) &#xB97C; FD 1 (stdin) &#xC73
 <blockquote>
 <p>3&gt; outfile &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : stdout, FD 2 : stderr, FD 3 : outfile )</p>
 </blockquote>
-<p><em>2</em> . FD 2&#xBC88;&#xC744; 1&#xBC88;&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xB294;&#xB370; &#xD604;&#xC7AC; FD 1, 2 &#xBC88;&#xC740; &#xBAA8;&#xB450; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xC5F0;&#xACB0;&#xB3FC; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xBC14;&#xB00C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xAE30;&#xC874;&#xC758; FD 2 &#xBC88;&#xC758; stderr &#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB358; &#xAC83;&#xC774; &#xC774;&#xC81C;&#xB294; FD 1 &#xBC88;&#xC758; stdout &#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.( stdout, stderr &#xB97C; &#xD558;&#xB098;&#xC758; &#xD30C;&#xC77C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xBA74;&#xB428;.)</p>
+<p><em>2</em> . FD 2&#xBC88;&#xC744; 1&#xBC88;&#xC5D0; &#xC5F0;&#xACB0;&#xD558;&#xB294;&#xB370; &#xD604;&#xC7AC; FD 1, 2 &#xBC88;&#xC740; &#xBAA8;&#xB450; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xC5F0;&#xACB0;&#xB3FC; &#xC788;&#xC73C;&#xBBC0;&#xB85C;
+&#xCD9C;&#xB825;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xBC14;&#xB00C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC624;&#xB958;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xAE30;&#xC874;&#xC758; FD 2 &#xBC88;&#xC758; stderr &#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xB358; &#xAC83;&#xC774; &#xC774;&#xC81C;&#xB294;
+FD 1 &#xBC88;&#xC758; stdout &#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+( stdout, stderr &#xB97C; &#xD130;&#xBBF8;&#xB110;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xD558;&#xB098;&#xC758; &#xD30C;&#xC77C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xBA74;&#xB428;.)</p>
 <blockquote>
 <p>2&gt;&amp;1 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ( FD 1 : stdout, FD 2 : stdout, FD 3 : outfile )</p>
 </blockquote>
@@ -1939,8 +1943,9 @@ Try <span class="hljs-string">&apos;date --help&apos;</span> <span class="hljs-k
 <h1 id="2">2.</h1>
 <p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB294; background &#xB85C; &#xC2E4;&#xD589;&#xB418;&#xB294; 3 &#xAC1C;&#xC758; start &#xD568;&#xC218; &#xCD9C;&#xB825;&#xC774; &#xBAA8;&#xB450;
 &#xD30C;&#xC774;&#xD504;&#xB97C; &#xD1B5;&#xD574; sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xB294;&#xB370;&#xC694;.
-&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; start &#xD568;&#xC218;&#xC758; stdout  &#xCD9C;&#xB825;&#xC740; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C;&#xD558;&#xACE0; 
-&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD560; &#xB54C;&#xB9CC; sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; start &#xD568;&#xC218;&#xB4E4;&#xC758; stdout  &#xCD9C;&#xB825;&#xC740; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xAC00;&#xAC8C;&#xD558;&#xACE0; 
+&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD560; &#xB54C;&#xB9CC; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xB294; 
+sed &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xAC00;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
 </span>
 <span class="hljs-function"><span class="hljs-title">start</span></span> () {
