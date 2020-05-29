@@ -1299,6 +1299,21 @@ $ <span class="hljs-built_in">kill</span> -<span class="hljs-number">0</span> <s
 bash: <span class="hljs-built_in">kill</span>: (<span class="hljs-number">1</span>) - Operation not permitted   
 <span class="hljs-number">1</span>
 </code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; kill &#xBA85;&#xB839;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; 5 &#xCD08;&#xB9C8;&#xB2E4; <code>dd</code> &#xBA85;&#xB839;&#xC758; &#xC9C4;&#xD589; &#xC0C1;&#xD0DC;&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC2E4;&#xD589;&#xC911;&#xC778; dd &#xBA85;&#xB839;&#xC5D0; USR1 &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0B4;&#xBA74; &#xD604;&#xC7AC; &#xC9C4;&#xD589; &#xC0C1;&#xD0DC;&#xB97C; stderr &#xB85C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-bash">( dd bs=<span class="hljs-number">1</span>M <span class="hljs-keyword">if</span>=<span class="hljs-variable">$lv</span>-snapshot &amp; <span class="hljs-built_in">echo</span> $! &gt; /tmp/pid ) <span class="hljs-number">2</span>&gt; &gt;( grep <span class="hljs-string">&apos;copied&apos;</span> <span class="hljs-number">1</span>&gt;&amp;<span class="hljs-number">2</span> ) | 
+gzip --fast | ssh <span class="hljs-variable">$DEST</span> <span class="hljs-string">&quot;gzip -d | dd bs=1M of=<span class="hljs-variable">$lv</span>&quot;</span> &amp;
+
+sleep <span class="hljs-number">1</span>   <span class="hljs-comment"># Need this sleep to give the above time to run</span>
+PID=$( &lt; /tmp/pid )
+
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">kill</span> -<span class="hljs-number">0</span> <span class="hljs-variable">$PID</span>; <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">kill</span> -USR1 <span class="hljs-variable">$PID</span>
+  sleep <span class="hljs-number">5</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
 <h3 id="pid-&#xAC00;-0-&#xC77C;&#xACBD;&#xC6B0;">PID &#xAC00; 0 &#xC77C;&#xACBD;&#xC6B0;</h3>
 <p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xD2B9;&#xC815; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC744; &#xC885;&#xB8CC;&#xD574;&#xC57C; &#xB420; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB7F0;&#xB370; background &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5B4; &#xC2E4;&#xD589; &#xC911;&#xC774;&#xAC70;&#xB098;

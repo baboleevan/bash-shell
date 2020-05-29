@@ -1580,6 +1580,30 @@ $ ps f `pidof sleep`
 <span class="hljs-number">12394</span> pts/<span class="hljs-number">17</span>   S      <span class="hljs-number">0</span>:<span class="hljs-number">00</span> sleep <span class="hljs-number">10</span>
 <span class="hljs-number">12393</span> pts/<span class="hljs-number">17</span>   S      <span class="hljs-number">0</span>:<span class="hljs-number">00</span> sleep <span class="hljs-number">10</span>
 </code></pre>
+<h4 id="&#xD30C;&#xC774;&#xD504;-subshell-&#xC5D0;&#xC11C;-background-&#xB85C;-&#xC2E4;&#xD589;&#xD560;-&#xB54C;&#xB294;-&#xBA85;&#xB839;-&#xADF8;&#xB8F9;&#xC744;-&#xC0AC;&#xC6A9;&#xD574;&#xC57C;-&#xD569;&#xB2C8;&#xB2E4;">&#xD30C;&#xC774;&#xD504; subshell &#xC5D0;&#xC11C; background &#xB85C; &#xC2E4;&#xD589;&#xD560; &#xB54C;&#xB294; &#xBA85;&#xB839; &#xADF8;&#xB8F9;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</h4>
+<pre><code class="lang-bash">$ sleep <span class="hljs-number">10</span> &amp; | <span class="hljs-built_in">echo</span> <span class="hljs-number">11</span>
+bash: syntax error near unexpected token <span class="hljs-string">&apos;|&apos;</span>     <span class="hljs-comment"># &#xC624;&#xB958;</span>
+
+<span class="hljs-comment"># &#xC704; &#xBA85;&#xB839;&#xBB38;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+$ | <span class="hljs-built_in">echo</span> <span class="hljs-number">11</span>
+bash: syntax error near unexpected token <span class="hljs-string">&apos;|&apos;</span>
+
+$ { sleep <span class="hljs-number">10</span> &amp; } | <span class="hljs-built_in">echo</span> <span class="hljs-number">11</span>     <span class="hljs-comment"># OK</span>
+<span class="hljs-number">11</span>
+
+$ ( sleep <span class="hljs-number">10</span> &amp; ) | <span class="hljs-built_in">echo</span> <span class="hljs-number">11</span>     <span class="hljs-comment"># OK</span>
+<span class="hljs-number">11</span>
+</code></pre>
+<h4 id="&#xBA85;&#xB839;-&#xCE58;&#xD658;-&#xC5D0;&#xC11C;&#xC758;-background-&#xC2E4;&#xD589;">&#xBA85;&#xB839; &#xCE58;&#xD658; &#xC5D0;&#xC11C;&#xC758; background &#xC2E4;&#xD589;</h4>
+<p>&#xBA85;&#xB839; &#xCE58;&#xD658;&#xC5D0;&#xC11C; background &#xB85C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xD574;&#xB2F9; &#xBA85;&#xB839;&#xC774; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0;
+&#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 10 &#xCD08;&#xAC00; &#xC9C0;&#xB09C;&#xD6C4;&#xC5D0; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
+$ PID=$( sleep <span class="hljs-number">10</span> &amp; <span class="hljs-built_in">echo</span> $! ); <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PID</span> ...
+<span class="hljs-number">234883</span> ...
+
+$ <span class="hljs-built_in">echo</span> $( sleep <span class="hljs-number">10</span> &amp; <span class="hljs-built_in">echo</span> $! )
+<span class="hljs-number">235603</span>
+</code></pre>
 <h4 id="script-&#xD30C;&#xC77C;-&#xC2E4;&#xD589;-&#xC911;&#xC5D0;-background-&#xB85C;-&#xC2E4;&#xD589;">Script &#xD30C;&#xC77C; &#xC2E4;&#xD589; &#xC911;&#xC5D0; background &#xB85C; &#xC2E4;&#xD589;</h4>
 <p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC744; &#xC2E4;&#xD589; &#xC911;&#xC5D0; background &#xB85C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xC774;&#xB54C; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xBA85;&#xB839;&#xC740;
 job table &#xC5D0; &#xB4F1;&#xB85D;&#xB418;&#xC9C0; &#xC54A;&#xACE0; stdin &#xC740; /dev/null &#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.
