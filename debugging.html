@@ -1337,8 +1337,87 @@ rm -rf ~/Workspace/<span class="hljs-variable">$Testdir</span>           <span c
 <h3 id="&#xC624;&#xB958;-&#xBC1C;&#xC0DD;&#xC2DC;-&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&#xC885;&#xB8CC;">&#xC624;&#xB958; &#xBC1C;&#xC0DD;&#xC2DC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC885;&#xB8CC;</h3>
 <p><code>-e</code> | <code>set -o errexit</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589; &#xC2DC;&#xC5D0; &#xC5B4;&#xB5A4; &#xBA85;&#xB839;&#xC774;
 &#xC624;&#xB958;&#xB85C; &#xC885;&#xB8CC;&#xD558;&#xC600;&#xC744; &#xACBD;&#xC6B0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC885;&#xB8CC;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC624;&#xB958;&#xAC00; &#xB098;&#xB294; &#xBA85;&#xB839;&#xC774; <code>&amp;&amp;</code>, <code>||</code>, <code>if</code>, <code>while</code> ... &#xAC19;&#xC740; &#xBD84;&#xAE30;&#xBB38;&#xC758; 
+&#xC624;&#xB958;&#xAC00; &#xB098;&#xB294; &#xBA85;&#xB839;&#xC774; <code>&amp;&amp;</code>, <code>||</code>, <code>if</code>, <code>while</code> ... &#xC640; &#xAC19;&#xC740; &#xBD84;&#xAE30;&#xBB38;&#xC758; 
 condition &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xC608;&#xC678;&#xB85C; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment">#!/bin/bash -e      # errexit &#xC635;&#xC158; &#xC124;&#xC815;</span>
+
+<span class="hljs-built_in">echo</span> start ...
+<span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx         <span class="hljs-comment"># &apos;xxx&apos; &#xB294; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xB514;&#xB809;&#xD1A0;&#xB9AC;</span>
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh
+start ...           <span class="hljs-comment"># test -d &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC5EC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589;&#xC774; &#xC885;&#xB8CC;&#xB41C;&#xB2E4;.</span>
+
+---------------------------------------
+
+<span class="hljs-comment"># subshell &#xC758; &#xACBD;&#xC6B0;&#xB3C4; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">#!/bin/bash -e</span>
+
+<span class="hljs-built_in">echo</span> start ...
+( <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> )    <span class="hljs-comment"># test -d &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xC911;&#xB2E8;&#xB418;&#xACE0;</span>
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh 
+start ...
+<span class="hljs-number">111</span>                                    <span class="hljs-comment"># &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB41C;&#xB2E4;.</span>
+
+------------------------------------
+
+<span class="hljs-comment"># &#xD30C;&#xC774;&#xD504; subshell &#xC758; &#xACBD;&#xC6B0;&#xB294; test -d &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xC911;&#xB2E8;&#xB418;&#xAE30;&#xB294; &#xD558;&#xC9C0;&#xB9CC;</span>
+<span class="hljs-comment"># &#xD30C;&#xC774;&#xD504; &#xC804;&#xCCB4; &#xBA85;&#xB839;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &apos;0&apos; &#xC774; &#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">#!/bin/bash -e</span>
+
+<span class="hljs-built_in">echo</span> start ...
+{ <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> ;} | cat
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh 
+start ...
+<span class="hljs-number">111</span>
+end ...           <span class="hljs-comment"># &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC9C0;&#xB294; &#xC54A;&#xB294;&#xB2E4;.</span>
+
+<span class="hljs-comment"># &#xC774;&#xB54C;&#xB294; pipefail &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD30C;&#xC774;&#xD504; &#xC804;&#xCCB4; &#xBA85;&#xB839;&#xC774; &#xC624;&#xB958;&#xAC00; &#xB418;&#xC5B4; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">#!/bin/bash -e</span>
+
+<span class="hljs-built_in">set</span> -o pipefail
+
+<span class="hljs-built_in">echo</span> start ...
+{ <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> ;} | cat
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh 
+start ...
+<span class="hljs-number">111</span>
+
+----------------------------------------
+
+<span class="hljs-comment"># &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBA85;&#xB839; &#xCE58;&#xD658; subshell &#xC5D0;&#xB294; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">#!/bin/bash -e</span>
+
+<span class="hljs-built_in">echo</span> start ...
+: $( <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> &gt;&amp;<span class="hljs-number">2</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> &gt;&amp;<span class="hljs-number">2</span> )
+AA=$( <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> &gt;&amp;<span class="hljs-number">2</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> &gt;&amp;<span class="hljs-number">2</span> )
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh 
+start ...
+<span class="hljs-number">111</span>
+<span class="hljs-number">222</span>
+<span class="hljs-number">111</span>
+<span class="hljs-number">222</span>
+end ...
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB294; &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC774; &#xC624;&#xB958;&#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">#!/bin/bash -e</span>
+
+<span class="hljs-built_in">echo</span> start ...
+AA=$( <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx )
+<span class="hljs-built_in">echo</span> end ...
+
+$ ./errexit.sh 
+start ...
+</code></pre>
+<p>&#xBD84;&#xAE30;&#xBB38;&#xC758; condition &#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xC608;&#xC678;&#xB85C; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># if &#xBB38;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACBD;&#xC6B0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; exit &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 <span class="hljs-keyword">if</span> error_<span class="hljs-built_in">command</span> ...; <span class="hljs-keyword">then</span>
     :
