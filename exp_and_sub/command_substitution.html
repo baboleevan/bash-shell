@@ -1482,7 +1482,7 @@ $ cat test.sh
 $ ./test.sh 
 start ....
 
-end....                 <span class="hljs-comment"># test &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC9C0;&#xB9CC; &#xC790;&#xB3D9; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xB05D;&#xAE4C;&#xC9C0; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
+end....                 <span class="hljs-comment"># test -d &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC9C0;&#xB9CC; &#xC790;&#xB3D9; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xB05D;&#xAE4C;&#xC9C0; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
 
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">0</span>
@@ -1509,7 +1509,7 @@ start ....              <span class="hljs-comment"># &#xC2A4;&#xD06C;&#xB9BD;&#x
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>
 </code></pre>
-<p>&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &#xBA85;&#xB839; &#xCE58;&#xD658; subshell &#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC5D0; &#xB530;&#xB985;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &#xBA85;&#xB839; &#xCE58;&#xD658; subshell &#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC744; &#xB530;&#xB985;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># test &#xBA85;&#xB839;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC9C0;&#xB9CC; &#xB9C8;&#xC9C0;&#xB9C9; echo &#xBA85;&#xB839;&#xC740; &#xC815;&#xC0C1; &#xC885;&#xB8CC;&#xB410;&#xC73C;&#xBBC0;&#xB85C;</span>
 <span class="hljs-comment"># &#xBA85;&#xB839; &#xCE58;&#xD658; subshell &#xC758; &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; &apos;0&apos; &#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
 $ AA=$( <span class="hljs-built_in">echo</span> <span class="hljs-number">111</span> &gt;&amp;<span class="hljs-number">2</span>; <span class="hljs-built_in">test</span> <span class="hljs-operator">-d</span> xxx; <span class="hljs-built_in">echo</span> <span class="hljs-number">222</span> &gt;&amp;<span class="hljs-number">2</span> )
