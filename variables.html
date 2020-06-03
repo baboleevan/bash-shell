@@ -1266,6 +1266,12 @@ ORIGINAL_FILE=myfile
 
 FILE_PREFIX=<span class="hljs-variable">$ORIGINAL_FILE</span>.split   <span class="hljs-comment"># &apos;.&apos; &#xC0AC;&#xC6A9;</span>
 FILE_PREFIX=<span class="hljs-variable">$ORIGINAL_FILE</span>-split   <span class="hljs-comment"># &apos;-&apos; &#xC0AC;&#xC6A9;</span>
+
+.............................................
+
+$ num=<span class="hljs-number">3</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">1234567890</span> | cut -c <span class="hljs-variable">$num</span>-
+<span class="hljs-number">34567890</span>
 </code></pre>
 <p>&#xD604;&#xC7AC; shell &#xC5D0; &#xC815;&#xC758;&#xB41C; &#xBAA8;&#xB4E0; &#xBCC0;&#xC218;&#xBA85; &#xBCF4;&#xAE30;</p>
 <pre><code class="lang-bash">$ compgen -A variable
@@ -1612,7 +1618,7 @@ $ env BAR=<span class="hljs-number">300</span> sh -c <span class="hljs-string">&
 $ env -i sh -c <span class="hljs-string">&apos;echo $FOO $BAR&apos;</span>
 $
 
-<span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC2DC; cd &#xD558;&#xACE0; &#xC2F6;&#xC73C;&#xBA74;</span>
+<span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; &#xBA85;&#xB839; &#xC2E4;&#xD589;&#xC2DC; working directory &#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xACE0; &#xC2F6;&#xC73C;&#xBA74;</span>
 $ env -C Documents -u FOO sh -c <span class="hljs-string">&apos;pwd; echo $FOO $BAR&apos;</span>
 /home/mug896/Documents
 <span class="hljs-number">200</span>
