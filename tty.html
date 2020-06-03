@@ -1603,7 +1603,7 @@ interactive shell &#xC774; SIGHUP &#xC2E0;&#xD638;&#xB97C; &#xBC1B;&#xC73C;&#xBA
 SIGHUP &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0B4; &#xAC19;&#xC774; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.  </p>
 <h1 id="quiz">Quiz</h1>
 <p>&#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; space &#xB294; &#xC785;&#xB825;&#xC774; &#xB418;&#xC9C0;&#xB9CC; tab &#xD0A4;&#xB294; &#xC785;&#xB825;&#xC774; &#xC548;&#xB418;&#xC8E0;.
-&#xC544;&#xB798; echo &#xBA85;&#xB839;&#xC744; &#xBCF4;&#xBA74;  \x09 tab escape &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB3C4; &#xC54A;&#xC558;&#xB294;&#xB370; tab &#xBB38;&#xC790;&#xAC00; &#xC785;&#xB825;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798; echo &#xBA85;&#xB839;&#xC744; &#xBCF4;&#xBA74;  \x09 tab &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0;&#xB3C4; &#xC54A;&#xC558;&#xB294;&#xB370; tab &#xBB38;&#xC790;&#xAC00; &#xC785;&#xB825;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC5B4;&#xB5BB;&#xAC8C; &#xD558;&#xC600;&#xC744;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;AA             BB&quot;</span> | od <span class="hljs-operator">-a</span>
 <span class="hljs-number">0000000</span>   A   A  ht  ht   B   B  nl      <span class="hljs-comment"># ht &#xB294; horizontal tab</span>
@@ -1653,6 +1653,24 @@ $ tput lines
 
 $ stty size
 <span class="hljs-number">19</span> <span class="hljs-number">92</span>
+</code></pre>
+<h1 id="4">4.</h1>
+<p><code>vi</code> &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>-</code> ( stdin ) &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xD30C;&#xC774;&#xD504;&#xB85C;&#xBD80;&#xD130; &#xB370;&#xC774;&#xD130;&#xB97C;
+&#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.
+<code>emacs</code> &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ ls | vi -             <span class="hljs-comment"># vi &#xB294; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</span>
+
+$ ls | emacs -          <span class="hljs-comment"># emacs &#xB294; &#xC624;&#xB958; &#xBC1C;&#xC0DD;</span>
+emacs: standard input is not a tty
+
+--------------------------------------------
+
+<span class="hljs-comment"># emacs &#xC758; &#xACBD;&#xC6B0;&#xB294; /dev/tty &#xB97C; stdin &#xC5D0; &#xC5F0;&#xACB0;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</span>
+$ ls | emacs --insert &lt;(cat) &lt; /dev/tty
+
+$ <span class="hljs-built_in">alias</span> emacs-=<span class="hljs-string">&quot;emacs --insert &lt;(cat) &lt; /dev/tty&quot;</span>
+
+$ ls | emacs-
 </code></pre>
 
                     
