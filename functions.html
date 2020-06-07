@@ -1748,6 +1748,7 @@ get_image_configuration <span class="hljs-string">&quot;<span class="hljs-variab
 <p>docker hub &#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xC774;&#xBBF8;&#xC9C0;&#xC758; taglist &#xB97C; &#xD655;&#xC778;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">docker-<span class="hljs-function"><span class="hljs-title">taglist</span></span> ()
 {
+    <span class="hljs-built_in">local</span> result
     <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
         result=$( curl <span class="hljs-operator">-s</span>S <span class="hljs-string">&quot;https://registry.hub.docker.com/v1/repositories/<span class="hljs-variable">$1</span>/tags&quot;</span> )
         <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$result</span> =~ not\ found\<span class="hljs-string">&quot;$ ]]; then
