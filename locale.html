@@ -1543,9 +1543,9 @@ $ <span class="hljs-built_in">echo</span> -n &#xD55C;&#xAE00; | perl -lpe <span 
     ^^^^   ^^^^^^   ^^^^^^     ^^^^   ^^^^^^   ^^^^^^
       \_____ &#xD55C; ______/          \_____ &#xAE00; ______/
 
-$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%x&quot;</span> $(( <span class="hljs-number">2</span><span class="hljs-comment">#1101010101011100 ))</span>
+$ <span class="hljs-built_in">printf</span> %x $(( <span class="hljs-number">2</span><span class="hljs-comment">#1101010101011100 ))</span>
 d55c
-$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%x&quot;</span> $(( <span class="hljs-number">2</span><span class="hljs-comment">#1010111000000000 ))</span>
+$ <span class="hljs-built_in">printf</span> %x $(( <span class="hljs-number">2</span><span class="hljs-comment">#1010111000000000 ))</span>
 ae00
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;\Ud55c\Uae00&apos;</span>                 <span class="hljs-comment"># unicode</span>
