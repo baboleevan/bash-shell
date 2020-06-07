@@ -1749,17 +1749,14 @@ get_image_configuration <span class="hljs-string">&quot;<span class="hljs-variab
 <pre><code class="lang-bash">docker-<span class="hljs-function"><span class="hljs-title">taglist</span></span> ()
 {
     <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
-        curl <span class="hljs-operator">-s</span>S <span class="hljs-string">&quot;https://registry.hub.docker.com/v1/repositories/<span class="hljs-variable">$1</span>/tags&quot;</span> \
-        | { 
-            result=$(cat)
-            <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$result</span> =~ not\ found\<span class="hljs-string">&quot;$ ]]; then
-                echo <span class="hljs-variable">$result</span> &gt;&amp;2
-                return 1
-            else
-                echo &quot;</span><span class="hljs-variable">$result</span><span class="hljs-string">&quot; | grep -Po &apos;(?&lt;=&quot;</span>name<span class="hljs-string">&quot;: &quot;</span>)[^<span class="hljs-string">&quot;]+&apos; | sort -V \
-                | sed -n &apos;$!{ /^latest$/{h;d} }; p; <span class="hljs-variable">${g; /^$/!p}</span>&apos;
-            fi
-        }
+        result=$( curl <span class="hljs-operator">-s</span>S <span class="hljs-string">&quot;https://registry.hub.docker.com/v1/repositories/<span class="hljs-variable">$1</span>/tags&quot;</span> )
+        <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$result</span> =~ not\ found\<span class="hljs-string">&quot;$ ]]; then
+            echo <span class="hljs-variable">$result</span> &gt;&amp;2
+            return 1
+        else
+            echo &quot;</span><span class="hljs-variable">$result</span><span class="hljs-string">&quot; | grep -Po &apos;(?&lt;=&quot;</span>name<span class="hljs-string">&quot;: &quot;</span>)[^<span class="hljs-string">&quot;]+&apos; | sort -V \
+            | sed -n &apos;$!{ /^latest$/{h;d} }; p; <span class="hljs-variable">${g; /^$/!p}</span>&apos;
+        fi
     else
         printf &apos;\n%s\n\n&apos; &quot;</span>Usage: <span class="hljs-variable">${FUNCNAME[0]}</span> image_name<span class="hljs-string">&quot;
     fi
