@@ -1931,10 +1931,10 @@ AA=( <span class="hljs-string">&quot;<span class="hljs-variable">${A1%?}</span>&
 select pick <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${AA[@]}</span>&quot;</span>
 <span class="hljs-keyword">do</span>
     <span class="hljs-keyword">case</span> <span class="hljs-variable">$pick</span> <span class="hljs-keyword">in</span>
-        <span class="hljs-variable">${AA[0]}</span> ) correct=<span class="hljs-variable">${A1: -1}</span> ;;
-        <span class="hljs-variable">${AA[1]}</span> ) correct=<span class="hljs-variable">${A2: -1}</span> ;;
-        <span class="hljs-variable">${AA[2]}</span> ) correct=<span class="hljs-variable">${A3: -1}</span> ;;
-        <span class="hljs-variable">${AA[3]}</span> ) correct=<span class="hljs-variable">${A4: -1}</span> ;;
+        <span class="hljs-variable">${AA[0]}</span> ) OX=<span class="hljs-variable">${A1: -1}</span> ;;
+        <span class="hljs-variable">${AA[1]}</span> ) OX=<span class="hljs-variable">${A2: -1}</span> ;;
+        <span class="hljs-variable">${AA[2]}</span> ) OX=<span class="hljs-variable">${A3: -1}</span> ;;
+        <span class="hljs-variable">${AA[3]}</span> ) OX=<span class="hljs-variable">${A4: -1}</span> ;;
         *) 
             [ <span class="hljs-string">&quot;<span class="hljs-variable">$REPLY</span>&quot;</span> = <span class="hljs-string">&quot;x&quot;</span> ] &amp;&amp; <span class="hljs-built_in">break</span> <span class="hljs-number">2</span>
             <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\n&#xC62C;&#xBC14;&#xB978; &#xBC88;&#xD638;&#xB97C; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.\n&quot;</span>
@@ -1943,7 +1943,7 @@ select pick <span class="hljs-keyword">in</span> <span class="hljs-string">&quot
 
     <span class="hljs-built_in">echo</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$REPLY</span> &#xBC88; \&quot;<span class="hljs-variable">${pick% }</span>\&quot;&quot;</span>
-    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$correct</span>&quot;</span> = <span class="hljs-string">&quot;O&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$OX</span>&quot;</span> = <span class="hljs-string">&quot;O&quot;</span> ]; <span class="hljs-keyword">then</span>
         <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;@@@ &#xC815;&#xB2F5; @@@ &#xC785;&#xB2C8;&#xB2E4;.&quot;</span>
         next=<span class="hljs-literal">true</span>; <span class="hljs-built_in">let</span> next_question++
         [ <span class="hljs-string">&quot;<span class="hljs-variable">$next_question</span>&quot;</span> <span class="hljs-operator">-gt</span> <span class="hljs-string">&quot;<span class="hljs-variable">$total_questions</span>&quot;</span> ] &amp;&amp; <span class="hljs-built_in">break</span> <span class="hljs-number">2</span>
