@@ -1674,15 +1674,6 @@ main &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC788;&
     get_image_configuration     <span class="hljs-comment"># get_image_configuration &quot;$image&quot; &quot;$token&quot; &quot;$digest&quot;</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">get_image_configuration</span></span>() {
-    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Retrieving image configuration ... &quot;</span> &gt;&amp;<span class="hljs-number">2</span>
-
-    curl --silent --location \
-    --header <span class="hljs-string">&quot;Authorization: Bearer <span class="hljs-variable">$token</span>&quot;</span> \
-    <span class="hljs-string">&quot;https://registry-1.docker.io/v2/<span class="hljs-variable">$image</span>/blobs/<span class="hljs-variable">$digest</span>&quot;</span> \
-    | jq -r <span class="hljs-string">&apos;.container_config&apos;</span>
-}
-
 <span class="hljs-function"><span class="hljs-title">get_token</span></span>() {
     <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Retrieving docker hub token ... &quot;</span> &gt;&amp;<span class="hljs-number">2</span>
 
@@ -1700,9 +1691,18 @@ main &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC788;&
     --header <span class="hljs-string">&quot;Accept: application/vnd.docker.distribution.manifest.v2+json&quot;</span> \
     --header <span class="hljs-string">&quot;Authorization: Bearer <span class="hljs-variable">$token</span>&quot;</span> \
     <span class="hljs-string">&quot;https://registry-1.docker.io/v2/<span class="hljs-variable">$image</span>/manifests/<span class="hljs-variable">$tag</span>&quot;</span> \
-    | jq <span class="hljs-string">&apos;.&apos;</span>
+    | jq -r <span class="hljs-string">&apos;.config.digest&apos;</span>
 
     <span class="hljs-built_in">echo</span> done. &gt;&amp;<span class="hljs-number">2</span>
+}
+
+<span class="hljs-function"><span class="hljs-title">get_image_configuration</span></span>() {
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Retrieving image configuration ... &quot;</span> &gt;&amp;<span class="hljs-number">2</span>
+
+    curl --silent --location \
+    --header <span class="hljs-string">&quot;Authorization: Bearer <span class="hljs-variable">$token</span>&quot;</span> \
+    <span class="hljs-string">&quot;https://registry-1.docker.io/v2/<span class="hljs-variable">$image</span>/blobs/<span class="hljs-variable">$digest</span>&quot;</span> \
+    | jq -r <span class="hljs-string">&apos;.&apos;</span>
 }
 
 <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$#</span>&quot;</span> = <span class="hljs-number">0</span> -o <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> = <span class="hljs-string">&quot;-h&quot;</span> -o <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> = <span class="hljs-string">&quot;--help&quot;</span> ]; <span class="hljs-keyword">then</span>
