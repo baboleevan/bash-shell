@@ -1705,7 +1705,7 @@ main &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC788;&
     |&amp; { 
         result=$(cat)
         <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$result</span> =~ ^<span class="hljs-number">404</span> ]]; <span class="hljs-keyword">then</span>
-            <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$result</span>&quot;</span>
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$result</span>&quot;</span> &gt;&amp;<span class="hljs-number">2</span>
             <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
         <span class="hljs-keyword">else</span>
             <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$result</span>&quot;</span> | jq -r <span class="hljs-string">&apos;.&apos;</span>
