@@ -1470,14 +1470,36 @@ stty -icanon -echo
 $ ./test.sh
 SWQDHWUQIHDUEIDUDGIQWGUIQWIEYWY       <span class="hljs-comment"># Ctrl-c &#xC885;&#xB8CC;</span>
 </code></pre>
-<p>&#xC704; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; Ctrl-c &#xB85C; &#xC885;&#xB8CC;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB9CC;&#xC57D;&#xC5D0; &#xD568;&#xC218;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; prompt &#xC0C1;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;&#xBA74;
-&#xAE30;&#xC874; tty &#xC124;&#xC815;&#xC774; &#xC720;&#xC9C0;&#xAC00; &#xB418;&#xC5B4; &#xBB38;&#xC81C;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+<p>stty &#xBA85;&#xB839;&#xC73C;&#xB85C; &#xD130;&#xBBF8;&#xB110; &#xC124;&#xC815;&#xC744; &#xBCC0;&#xACBD;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xD55C; &#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; &#xC704;&#xC640; &#xAC19;&#xC774; Ctrl-c &#xC5D0;&#xC758;&#xD574; 
+&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xBE44;&#xC815;&#xC0C1; &#xC885;&#xB8CC;&#xB420; &#xACBD;&#xC6B0;&#xB294; &#xD130;&#xBBF8;&#xB110;&#xC774; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC774;&#xC804; &#xC0C1;&#xD0DC;&#xB85C; &#xBCF5;&#xAD6C;&#xB418;&#xC9C0;&#xB9CC;
+&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xACE0; &#xC815;&#xC0C1; &#xC885;&#xB8CC;&#xB420; &#xACBD;&#xC6B0;&#xB294; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBCF5;&#xAD6C;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xBA74; &#xC2E4;&#xD589; &#xD6C4;&#xC5D0;&#xB294; &#xD130;&#xBBF8;&#xB110;&#xC774; &#xC774;&#xC804;&#xACFC; &#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
+</span>
+stty -icanon -echo
+
+keypress=$(head -c1)
+<span class="hljs-built_in">printf</span> %b <span class="hljs-string">&apos;\&apos;</span>$( <span class="hljs-built_in">printf</span> %o $(( $(<span class="hljs-built_in">printf</span> %d <span class="hljs-string">&quot;&apos;<span class="hljs-variable">$keypress</span>&quot;</span>) - <span class="hljs-number">32</span> )) )
+</code></pre>
+<p>&#xB530;&#xB77C;&#xC11C; &#xC815;&#xC0C1; &#xC885;&#xB8CC;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110; &#xC124;&#xC815;&#xC758; &#xBC31;&#xC5C5;&#xACFC; &#xBCF5;&#xAD6C;&#xAC00; &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
+</span>
+otty=`stty -g`         <span class="hljs-comment"># &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110; &#xC124;&#xC815; &#xBC31;&#xC5C5;</span>
+stty -icanon -echo
+
+keypress=$(head -c1)
+<span class="hljs-built_in">printf</span> %b <span class="hljs-string">&apos;\&apos;</span>$( <span class="hljs-built_in">printf</span> %o $(( $(<span class="hljs-built_in">printf</span> %d <span class="hljs-string">&quot;&apos;<span class="hljs-variable">$keypress</span>&quot;</span>) - <span class="hljs-number">32</span> )) )
+
+stty <span class="hljs-variable">$otty</span>             <span class="hljs-comment"># &#xBCF5;&#xAD6C;</span>
+</code></pre>
+<p>&#xB9CC;&#xC57D;&#xC5D0; &#xC704;&#xC640; &#xAC19;&#xC740; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; shell &#xD568;&#xC218;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;&#xBA74; Ctrl-c &#xB85C; &#xC885;&#xB8CC;&#xD55C;&#xB2E4;&#xACE0; &#xD574;&#xB3C4;
+&#xC774;&#xC804; &#xC0C1;&#xD0DC;&#xB85C; &#xD130;&#xBBF8;&#xB110;&#xC774; &#xBCF5;&#xAD6C;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB54C;&#xB294; non-canonical &#xBAA8;&#xB4DC;&#xC778; raw &#xBAA8;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; Ctrl-c, Ctrl-z &#xAC19;&#xC740; &#xBB38;&#xC790;&#xB4E4;&#xC774;
 &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xADF8;&#xB300;&#xB85C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; Ctrl-c &#xBB38;&#xC790;&#xB97C;
 &#xCEE8;&#xD2B8;&#xB864;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">upper</span></span> () {
     otty=`stty -g`       <span class="hljs-comment"># &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110; &#xC124;&#xC815; &#xBC31;&#xC5C5;</span>
-    stty raw -echo
+    stty raw -echo       <span class="hljs-comment"># raw &#xBAA8;&#xB4DC; &#xC0AC;&#xC6A9;</span>
 
     <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span>
         keypress=$(head -c1)
@@ -1487,13 +1509,38 @@ SWQDHWUQIHDUEIDUDGIQWGUIQWIEYWY       <span class="hljs-comment"># Ctrl-c &#xC88
     <span class="hljs-keyword">done</span>
 }
 </code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB97C; &#xC785;&#xB825;&#xBC1B;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB294; &#xC22B;&#xC790;&#xB85C;&#xB9CC; &#xC81C;&#xD55C;&#xC744; &#xD558;&#xACE0; &#xC785;&#xB825;&#xC2DC;&#xC5D0;&#xB294; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xAC8C; <code>*</code> &#xBB38;&#xC790;&#xB85C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh
+</span>
+<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Password (5 digits): &quot;</span>
+
+otty=`stty -g`                 <span class="hljs-comment"># &#xBC31;&#xC5C5;</span>
+stty -icanon -echo
+
+total=<span class="hljs-number">5</span>
+<span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span>
+    keypress=$(head -c1)
+    num=`<span class="hljs-built_in">printf</span> %d <span class="hljs-string">&quot;&apos;<span class="hljs-variable">$keypress</span>&quot;</span>`
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> <span class="hljs-variable">$num</span> -ge <span class="hljs-number">48</span> <span class="hljs-operator">-a</span> <span class="hljs-variable">$num</span> -le <span class="hljs-number">57</span>
+    <span class="hljs-keyword">then</span>
+        result=<span class="hljs-variable">${result}</span><span class="hljs-variable">${keypress}</span>
+        <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;* &apos;</span>
+        <span class="hljs-built_in">test</span> $((total-=<span class="hljs-number">1</span>)) = <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">break</span>
+    <span class="hljs-keyword">fi</span>
+<span class="hljs-keyword">done</span>
+
+stty <span class="hljs-variable">$otty</span>                     <span class="hljs-comment"># &#xBCF5;&#xAD6C;</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;\nYou entered : <span class="hljs-variable">$result</span>&quot;</span>
+</code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; bash &#xC758; <code>read -n1 var</code> &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xC774; enter &#xB97C; &#xB204;&#xB974;&#xC9C0; &#xC54A;&#xC544;&#xB3C4;
 &#xC785;&#xB825;&#xD55C; &#xBB38;&#xC790;&#xAC00; &#xC804;&#xB2EC;&#xB418;&#xC5B4; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;. 
 read &#xBA85;&#xB839;&#xC5D0;&#xC11C; <code>-n</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294; <code>sh</code> &#xC5D0;&#xC11C;&#xB294; &#xC774; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/sh
 </span>
 otty=`stty -g`       <span class="hljs-comment"># &#xBC31;&#xC5C5;</span>
-stty raw
+stty -icanon
 
 <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Are you sure (Y/N)? &quot;</span>
 keypress=$(head -c1)
