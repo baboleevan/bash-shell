@@ -1524,8 +1524,7 @@ stty -icanon -echo
 total=<span class="hljs-number">5</span>
 <span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span>
     keypress=$(head -c1)
-    num=`<span class="hljs-built_in">printf</span> %d <span class="hljs-string">&quot;&apos;<span class="hljs-variable">$keypress</span>&quot;</span>`
-    <span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> <span class="hljs-variable">$num</span> -ge <span class="hljs-number">48</span> <span class="hljs-operator">-a</span> <span class="hljs-variable">$num</span> -le <span class="hljs-number">57</span>
+    <span class="hljs-keyword">if</span> expr + <span class="hljs-string">&quot;<span class="hljs-variable">$keypress</span>&quot;</span> : <span class="hljs-string">&quot;[0-9]&quot;</span> &gt; /dev/null
     <span class="hljs-keyword">then</span>
         result=<span class="hljs-variable">${result}</span><span class="hljs-variable">${keypress}</span>
         <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;* &apos;</span>
