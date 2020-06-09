@@ -1549,8 +1549,18 @@ $ [ <span class="hljs-number">001</span> = <span class="hljs-number">1</span> ];
 char=$(head -c1)
 
 <span class="hljs-comment"># &#xC785;&#xB825;&#xAC12;&#xC774; 0 ~ 9 &#xBB38;&#xC790;&#xC774;&#xBA74; &#xCC38;</span>
-<span class="hljs-comment"># &gt; , &lt; &#xC5F0;&#xC0B0;&#xC790; &#xB300;&#xC2E0;&#xC5D0; -ge , -le &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC54C;&#xD30C;&#xBCB3; &#xBB38;&#xC790; &#xC785;&#xB825;&#xC2DC; &#xC624;&#xB958;.</span>
 <span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> \( <span class="hljs-string">&quot;<span class="hljs-variable">$char</span>&quot;</span> \&gt; <span class="hljs-number">0</span> -o <span class="hljs-string">&quot;<span class="hljs-variable">$char</span>&quot;</span> = <span class="hljs-number">0</span> \) <span class="hljs-operator">-a</span> \( <span class="hljs-string">&quot;<span class="hljs-variable">$char</span>&quot;</span> \&lt; <span class="hljs-number">9</span> -o <span class="hljs-string">&quot;<span class="hljs-variable">$char</span>&quot;</span> = <span class="hljs-number">9</span> \)
+<span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;It&apos;s a number&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;It&apos;s not a number&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+-----------------------------
+
+<span class="hljs-comment"># -ge &#xC0B0;&#xC220; &#xC5F0;&#xC0B0;&#xC790;&#xC758; &#xACBD;&#xC6B0; &#xC22B;&#xC790; &#xC774;&#xC678;&#xC758; &#xBB38;&#xC790;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xC624;&#xB958;&#xAC00; &#xB418;&#xBBC0;&#xB85C;</span>
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> <span class="hljs-string">&quot;<span class="hljs-variable">$char</span>&quot;</span> -ge <span class="hljs-number">0</span> <span class="hljs-number">2</span>&gt; /dev/null
 <span class="hljs-keyword">then</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;It&apos;s a number&quot;</span>
 <span class="hljs-keyword">else</span>
