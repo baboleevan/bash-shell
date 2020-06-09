@@ -1497,6 +1497,9 @@ stty <span class="hljs-variable">$otty</span>             <span class="hljs-comm
 &#xC774;&#xB54C;&#xB294; non-canonical &#xBAA8;&#xB4DC;&#xC778; raw &#xBAA8;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; Ctrl-c, Ctrl-z &#xAC19;&#xC740; &#xBB38;&#xC790;&#xB4E4;&#xC774;
 &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xADF8;&#xB300;&#xB85C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; Ctrl-c &#xBB38;&#xC790;&#xB97C;
 &#xCEE8;&#xD2B8;&#xB864;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>raw &#xBAA8;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.<br>-ignbrk  -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr -icrnl<br>-ixon -ixoff -icanon -opost -isig -iuclc -ixany -imaxbel -xcase min 1 time 0</p>
+</blockquote>
 <pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">upper</span></span> () {
     otty=`stty -g`       <span class="hljs-comment"># &#xD604;&#xC7AC; &#xD130;&#xBBF8;&#xB110; &#xC124;&#xC815; &#xBC31;&#xC5C5;</span>
     stty raw -echo       <span class="hljs-comment"># raw &#xBAA8;&#xB4DC; &#xC0AC;&#xC6A9;</span>
