@@ -1529,7 +1529,7 @@ total=<span class="hljs-number">5</span>
     <span class="hljs-keyword">then</span>
         result=<span class="hljs-variable">${result}</span><span class="hljs-variable">${keypress}</span>
         <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;* &apos;</span>
-        <span class="hljs-built_in">test</span> $((total-=<span class="hljs-number">1</span>)) = <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">break</span>
+        <span class="hljs-built_in">test</span> $((total -= <span class="hljs-number">1</span>)) = <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">break</span>
     <span class="hljs-keyword">fi</span>
 <span class="hljs-keyword">done</span>
 
