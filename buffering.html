@@ -1404,6 +1404,10 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;111\n222\n333&apos;</span> | 
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;num1: <span class="hljs-variable">$(sed -u 1q)</span>, num3: <span class="hljs-variable">$(read line; read line; echo $line)</span>&quot;</span>
 num1: <span class="hljs-number">111</span>, num3: <span class="hljs-number">333</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;111\n222\n333&apos;</span> | 
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;num1: <span class="hljs-variable">$(sed -u 1q)</span>, num3: <span class="hljs-variable">$(sed -nu 1q; sed -u 1q)</span>&quot;</span>
+num1: <span class="hljs-number">111</span>, num3: <span class="hljs-number">333</span>
 </code></pre>
 <p>redirection &#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; -u &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat file
