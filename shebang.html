@@ -1306,7 +1306,7 @@ $ bash -m script.sh
 . . .
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>rev</code> &#xBA85;&#xB839;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; emacs lisp &#xC73C;&#xB85C; &#xC791;&#xC131;&#xD574; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ cat test.sh
+<pre><code class="lang-bash">$ cat rev.sh
 <span class="hljs-comment">#!/usr/bin/env -S emacs -Q --script</span>
 (defun process (<span class="hljs-variable">$str</span>)
   (concat (nreverse (string-to-list <span class="hljs-variable">$str</span>))))
@@ -1319,10 +1319,10 @@ $ bash -m script.sh
   (error nil))
 ---------------------------------------------------
 
-$ ./test.sh &lt;&lt;&lt; <span class="hljs-number">123456789</span>               $ rev &lt;&lt;&lt; <span class="hljs-number">123456789</span>
+$ ./rev.sh &lt;&lt;&lt; <span class="hljs-number">123456789</span>                $ rev &lt;&lt;&lt; <span class="hljs-number">123456789</span>
 <span class="hljs-number">987654321</span>                               <span class="hljs-number">987654321</span>
 
-$ ./test.sh &lt; /etc/hosts                $ rev &lt; /etc/hosts
+$ ./rev.sh &lt; /etc/hosts                 $ rev &lt; /etc/hosts
 tsohlacol       <span class="hljs-number">1.0</span>.<span class="hljs-number">0.721</span>               tsohlacol       <span class="hljs-number">1.0</span>.<span class="hljs-number">0.721</span>
 kooBetilE       <span class="hljs-number">1.1</span>.<span class="hljs-number">0.721</span>               kooBetilE       <span class="hljs-number">1.1</span>.<span class="hljs-number">0.721</span>
 . . . .                                 . . . .
