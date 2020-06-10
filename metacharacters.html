@@ -1257,7 +1257,7 @@
                     
                         <h1 id="shell-metacharacters">Shell Metacharacters</h1>
 <p>Shell script &#xC5D0;&#xC11C;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. 
-&#xAC00;&#xB839; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBCC4;&#xB3C4;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; <a href="exp_and_sub/arithmetic_expansion.html">&#xD655;&#xC7A5;</a> &#xC774;&#xB098; <a href="special_commands.html">&#xBA85;&#xB839;</a> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xAC00;&#xB839; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBCC4;&#xB3C4;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; <a href="exp_and_sub/arithmetic_expansion.html">&#xC0B0;&#xC220;&#xD655;&#xC7A5;</a> &#xC774;&#xB098; <a href="special_commands.html">&#xBA85;&#xB839;</a> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
 &#xD558;&#xC9C0;&#xB9CC; &#xBA85;&#xB839;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB4E4;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB4E4;&#xC740; &#xBA85;&#xB839;&#xBB38; &#xC0C1;&#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xBBC0;&#xB85C; &#xB3D9;&#xC77C;&#xD55C; &#xBB38;&#xC790;&#xAC00; &#xBA85;&#xB839;&#xBB38;&#xC758; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0; &#xBC18;&#xB4DC;&#xC2DC; escape &#xD558;&#xAC70;&#xB098; quote &#xD574;&#xC57C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
 <p>C++ &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C; &#xB300;&#xC2E0; &#xC0DD;&#xC131;&#xD574;&#xC8FC;&#xB294; &#xD15C;&#xD50C;&#xB9BF; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xBA54;&#xD0C0;&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC774;&#xB77C;&#xACE0; &#xD558;&#xC8E0;,
@@ -1275,7 +1275,6 @@
 <h2 id="&#xA0;&#xA0;&#xA0;">(&#xA0;&#xA0;&#xA0;)</h2>
 <ul>
 <li>subshell &#xC744; &#xC0DD;&#xC131;&#xD560; &#xB54C;</li>
-<li>$(&#xA0;&#xA0;&#xA0;) &#xBA85;&#xB839; &#xCE58;&#xD658;&#xC5D0; &#xC0AC;&#xC6A9;</li>
 <li>&#xBA85;&#xB839; grouping &#xC5D0; &#xC0AC;&#xC6A9; </li>
 <li>&#xC6B0;&#xC120;&#xC21C;&#xC704; &#xC870;&#xC808;&#xC5D0;&#xB3C4; &#xC0AC;&#xC6A9;</li>
 </ul>
@@ -1348,10 +1347,10 @@ find: missing argument to <span class="hljs-string">&apos;-exec&apos;</span>
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; shell &#xBA54;&#xD0C0;&#xBB38;&#xC790; &#xB4E4;&#xC744; &#xBAA8;&#xB450; escape &#xD569;&#xB2C8;&#xB2E4;.</span>
 
 $ find * -type f <span class="hljs-string">&apos;(&apos;</span> -name <span class="hljs-string">&quot;*.log&quot;</span>  -or  -name <span class="hljs-string">&quot;*.bak&quot;</span> <span class="hljs-string">&apos;)&apos;</span> -exec rm <span class="hljs-operator">-f</span> {} <span class="hljs-string">&apos;;&apos;</span>
-no error !
+OK
 
 $ find * -type f \( -name <span class="hljs-string">&quot;*.log&quot;</span>  -or  -name <span class="hljs-string">&quot;*.bak&quot;</span> \) -exec rm <span class="hljs-operator">-f</span> {} \;
-no error !
+OK
 </code></pre>
 <h3 id="&#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB294;-shell-&#xC5D0;&#xC11C;-&#xD2B9;&#xBCC4;&#xD788;-&#xCDE8;&#xAE09;&#xD558;&#xB294;-&#xBB38;&#xC790;&#xB2E4;">&#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB294; shell &#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD788; &#xCDE8;&#xAE09;&#xD558;&#xB294; &#xBB38;&#xC790;&#xB2E4;.</h3>
 <p>&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E4;&#xB978; &#xB2E8;&#xC5B4;&#xC640; &#xACF5;&#xBC31; &#xC5C6;&#xC774; &#xBD99;&#xC5EC;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.</p>
@@ -1418,7 +1417,10 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">command</s
 <span class="hljs-built_in">command</span> <span class="hljs-built_in">history</span> : lsb_release <span class="hljs-operator">-d</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello!lsb world&quot;</span>            <span class="hljs-comment"># double quotes &#xC5D0;&#xC11C;&#xB3C4; history &#xD655;&#xC7A5;&#xC774; &#xB41C;&#xB2E4;!</span>
-hellolsb_release <span class="hljs-operator">-d</span> world
+hellolsb_release <span class="hljs-operator">-d</span> world   
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;hello!lsb world&apos;</span>
+hello!lsb world
 </code></pre>
 <h3 id="&#xB300;&#xC785;-&#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB85C;--&#xB97C;-&#xC0AC;&#xC6A9;&#xD560;-&#xC218;-&#xC788;&#xB2E4;">&#xB300;&#xC785; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB85C; += &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</h3>
 <p><code>+=</code> &#xB300;&#xC785; &#xBA54;&#xD0C0;&#xBB38;&#xC790;&#xB294; &#xBCC0;&#xC218; &#xC640; array &#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
