@@ -1291,9 +1291,6 @@
 
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0m&quot;</span>
-
-<span class="hljs-comment"># &#xBA3C;&#xC800; reset &#xD55C; &#xD6C4; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0m\e[01;31;44m  ...&quot;</span>
 </code></pre>
 <h3 id="color-style-&#xC18D;&#xC131;&#xAC12;">Color, Style &#xC18D;&#xC131;&#xAC12;</h3>
 <p>&#xB2E4;&#xC74C;&#xC740; 16 color terminal &#xC5D0; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
@@ -1396,30 +1393,25 @@ tput sgr0 &#x2013; Turn off all attributes ( <span class="hljs-string">&apos;\e[
 <p>tput &#xBA85;&#xB839;&#xC740; &#xB9E4; &#xC2E4;&#xD589;&#xC2DC;&#xB9C8;&#xB2E4; terminfo &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC870;&#xD68C;&#xD558;&#xBBC0;&#xB85C; &#xC18D;&#xB3C4;&#xAC00; &#xB290;&#xB9AC;&#xB2E4;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xBA3C;&#xC800; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC18D;&#xC131;&#xAC12;&#xB4E4;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="&#xC0AC;&#xC6A9;&#xC608;-">&#xC0AC;&#xC6A9;&#xC608; )</h4>
 <pre><code class="lang-bash">color_reset=$(tput sgr0)
-color_f_red=<span class="hljs-variable">$color_reset</span>$(tput setaf <span class="hljs-number">1</span>)
-color_b_blue=<span class="hljs-variable">$color_reset</span>$(tput setab <span class="hljs-number">4</span>)
-color_s_bold=<span class="hljs-variable">$color_reset</span>$(tput bold)
-color_my1=<span class="hljs-variable">$color_reset</span>$(tput setaf <span class="hljs-number">1</span>)$(tput setab <span class="hljs-number">4</span>)
-color_my2=<span class="hljs-variable">$color_reset</span>$(tput bold)$(tput setaf <span class="hljs-number">1</span>)$(tput setab <span class="hljs-number">4</span>)
+color_f_red=$(tput setaf <span class="hljs-number">1</span>)
+color_b_blue=$(tput setab <span class="hljs-number">4</span>)
+color_s_bold=$(tput bold)
+color_my1=$(tput setaf <span class="hljs-number">1</span>)$(tput setab <span class="hljs-number">4</span>)
+color_my2=$(tput bold)$(tput setaf <span class="hljs-number">1</span>)$(tput setab <span class="hljs-number">4</span>)
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$color_f_red</span>    red foreground&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$color_b_blue</span>   blue background&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$color_s_bold</span>   bold style&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$color_my1</span>      red foreground, blue background&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$color_my2</span>      bold style, red foreground, blue background&quot;</span>
-
-<span class="hljs-built_in">echo</span> <span class="hljs-variable">$color_reset</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_f_red}</span>red foreground<span class="hljs-variable">${color_reset}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_b_blue}</span>blue background<span class="hljs-variable">${color_reset}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_s_bold}</span>bold style<span class="hljs-variable">${color_reset}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_my1}</span>red foreground, blue background<span class="hljs-variable">${color_reset}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_my2}</span>bold style, red foreground, blue background<span class="hljs-variable">${color_reset}</span>&quot;</span>
 
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
 $(tput sgr0)
-
-<span class="hljs-comment"># &#xBA3C;&#xC800; reset &#xD55C; &#xD6C4; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
-$(tput sgr0)$(tput setaf <span class="hljs-number">1</span>) ...
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; test &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xB420;&#xACBD;&#xC6B0;&#xB9CC; &#xC18D;&#xC815;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">color_reset=$(tput sgr0)
-color_red=<span class="hljs-variable">$color_reset</span>$(tput setaf <span class="hljs-number">1</span>)
-color_blue=<span class="hljs-variable">$color_reset</span>$(tput setaf <span class="hljs-number">4</span>)
+color_red=$(tput setaf <span class="hljs-number">1</span>)
+color_blue=$(tput setaf <span class="hljs-number">4</span>)
 
 <span class="hljs-function"><span class="hljs-title">err</span></span> () {
     [ -t <span class="hljs-number">2</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> -n <span class="hljs-variable">$color_red</span>
@@ -1859,7 +1851,7 @@ PS1=<span class="hljs-string">&quot;<span class="hljs-variable">$AA</span> \w <s
 -------------------------------------------------
 
 color_reset=<span class="hljs-string">&quot;\[<span class="hljs-variable">$(tput sgr0)</span>\]&quot;</span>
-color_f_red=<span class="hljs-string">&quot;<span class="hljs-variable">$color_reset</span>\[<span class="hljs-variable">$(tput setaf 1)</span>\]&quot;</span>
+color_f_red=<span class="hljs-string">&quot;\[<span class="hljs-variable">$(tput setaf 1)</span>\]&quot;</span>
 
 PS1=<span class="hljs-string">&quot;<span class="hljs-variable">$AA</span> \w <span class="hljs-variable">$color_f_red</span>&quot;</span><span class="hljs-string">&apos;$?&apos;</span><span class="hljs-string">&quot;<span class="hljs-variable">$color_reset</span>&quot;</span><span class="hljs-string">&apos; \$ &apos;</span>
 </code></pre>
