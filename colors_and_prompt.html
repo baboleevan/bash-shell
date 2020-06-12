@@ -1281,24 +1281,7 @@
 <p>style &#xAC12;&#xC740; &#xC5EC;&#xB7EC;&#xAC1C;&#xB97C; &#xC801;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="4-m">4. m</h4>
 <p>&#xC885;&#xB8CC;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
-<h4 id="&#xC0AC;&#xC6A9;&#xC608;-">&#xC0AC;&#xC6A9;&#xC608; )</h4>
-<pre><code class="lang-bash"><span class="hljs-comment"># \e &#xBB38;&#xC790; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD574; echo &#xBA85;&#xB839;&#xC5D0;&#xC11C; -e &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31m          red foreground\e[0m&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31;43m       red foreground; yellow background\e[0m&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[1;31;43m     bright style; red foreground; yellow background\e[0m&quot;</span>
-
-<span class="hljs-comment"># &#xBA3C;&#xC800; reset &#xD55C; &#xD6C4;&#xC5D0; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31m        reset; red foreground\e[0m&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31;44m     reset; red foreground; blue background\e[0m&quot;</span>
-
-<span class="hljs-comment"># bright style &#xB3C4; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[01;31;44m    reset, bright style; red foreground; blue background\e[0m&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;1;31;44m   reset, bright style; red foreground; blue background\e[0m&quot;</span>
-
-<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0m&quot;</span>
-</code></pre>
-<h3 id="color-style-&#xC18D;&#xC131;&#xAC12;">Color, Style &#xC18D;&#xC131;&#xAC12;</h3>
+<h4 id="color-style-&#xC18D;&#xC131;&#xAC12;">Color, Style &#xC18D;&#xC131;&#xAC12;</h4>
 <p>&#xB2E4;&#xC74C;&#xC740; 16 color terminal &#xC5D0; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
 style &#xAC12;&#xC740; 10 &#xBCF4;&#xB2E4; &#xC791;&#xACE0; foreground &#xAC12;&#xC740; 30 &#xBC88;&#xB300;, background &#xAC12;&#xC740; 40 &#xBC88;&#xB300;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC12;&#xB9CC;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xBBC0;&#xB85C; &#xC21C;&#xC11C;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xC801;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># Style</span>
@@ -1329,6 +1312,23 @@ style &#xAC12;&#xC740; 10 &#xBCF4;&#xB2E4; &#xC791;&#xACE0; foreground &#xAC12;&
 <span class="hljs-number">45</span> &#x2014; Magenta
 <span class="hljs-number">46</span> &#x2014; Cyan
 <span class="hljs-number">47</span> &#x2014; White
+</code></pre>
+<h3 id="&#xC0AC;&#xC6A9;&#xC608;-">&#xC0AC;&#xC6A9;&#xC608; )</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># \e &#xBB38;&#xC790; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD574; echo &#xBA85;&#xB839;&#xC5D0;&#xC11C; -e &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31m          red foreground\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31;43m       red foreground; yellow background\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[1;31;43m     bright style; red foreground; yellow background\e[0m&quot;</span>
+
+<span class="hljs-comment"># &#xBA3C;&#xC800; reset &#xD55C; &#xD6C4;&#xC5D0; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31m        reset; red foreground\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31;44m     reset; red foreground; blue background\e[0m&quot;</span>
+
+<span class="hljs-comment"># bright style &#xB3C4; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[01;31;44m    reset, bright style; red foreground; blue background\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;1;31;44m   reset, bright style; red foreground; blue background\e[0m&quot;</span>
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0m&quot;</span>
 </code></pre>
 <p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB85C; &#xC804;&#xCCB4; &#xC0C9;&#xC0C1; &#xD504;&#xB9B0;&#xD2B8; &#xD574;&#xBCF4;&#xAE30;</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
