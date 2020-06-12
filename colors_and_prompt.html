@@ -1283,11 +1283,17 @@
 <p>&#xC885;&#xB8CC;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 <h4 id="&#xC0AC;&#xC6A9;&#xC608;-">&#xC0AC;&#xC6A9;&#xC608; )</h4>
 <pre><code class="lang-bash"><span class="hljs-comment"># \e &#xBB38;&#xC790; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD574; echo &#xBA85;&#xB839;&#xC5D0;&#xC11C; -e &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31m      red foreground&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;44m      blue background&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;1m       bright style&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31;44m   red foreground, blue background&quot;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[01;31;44m  bright style, red foreground, blue background&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31m        red foreground\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[31;43m     red foreground; yellow background\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[1;31;43m   bright style; red foreground; yellow background\e[0m&quot;</span>
+
+<span class="hljs-comment"># &#xBA3C;&#xC800; reset &#xD55C; &#xD6C4;&#xC5D0; &#xC18D;&#xC131;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31m        reset; red foreground\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;31;44m     reset; red foreground; blue background\e[0m&quot;</span>
+
+<span class="hljs-comment"># bright style &#xB3C4; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[01;31;44m    reset, bright style; red foreground; blue background\e[0m&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0;1;31;44m   reset, bright style; red foreground; blue background\e[0m&quot;</span>
 
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&quot;\e[0m&quot;</span>
@@ -1329,9 +1335,9 @@ style &#xAC12;&#xC740; 10 &#xBCF4;&#xB2E4; &#xC791;&#xACE0; foreground &#xAC12;&
 </span>
 <span class="hljs-keyword">for</span> fgcolor <span class="hljs-keyword">in</span> {<span class="hljs-number">30</span>..<span class="hljs-number">37</span>} ; <span class="hljs-keyword">do</span> 
     <span class="hljs-keyword">for</span> bgcolor <span class="hljs-keyword">in</span> {<span class="hljs-number">40</span>..<span class="hljs-number">47</span>}; <span class="hljs-keyword">do</span>
-        <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span>; <span class="hljs-keyword">do</span> 
-            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">${attr}</span>;<span class="hljs-variable">${fgcolor}</span>;<span class="hljs-variable">${bgcolor}</span>m&quot;</span> 
-            <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot; <span class="hljs-variable">${attr}</span>;<span class="hljs-variable">${fgcolor}</span>;<span class="hljs-variable">${bgcolor}</span> &quot;</span>
+        <span class="hljs-keyword">for</span> style <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span>; <span class="hljs-keyword">do</span> 
+            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">${style}</span>;<span class="hljs-variable">${fgcolor}</span>;<span class="hljs-variable">${bgcolor}</span>m&quot;</span> 
+            <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot; <span class="hljs-variable">${style}</span>;<span class="hljs-variable">${fgcolor}</span>;<span class="hljs-variable">${bgcolor}</span> &quot;</span>
             <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[0m&quot;</span>
         <span class="hljs-keyword">done</span>
         <span class="hljs-built_in">echo</span>
@@ -1344,9 +1350,9 @@ style &#xAC12;&#xC740; 10 &#xBCF4;&#xB2E4; &#xC791;&#xACE0; foreground &#xAC12;&
 </span>
 <span class="hljs-keyword">for</span> fgcolor <span class="hljs-keyword">in</span> {<span class="hljs-number">30</span>..<span class="hljs-number">37</span>} {<span class="hljs-number">90</span>..<span class="hljs-number">97</span>} <span class="hljs-number">39</span> ; <span class="hljs-keyword">do</span>
     <span class="hljs-keyword">for</span> bgcolor <span class="hljs-keyword">in</span> {<span class="hljs-number">40</span>..<span class="hljs-number">47</span>} {<span class="hljs-number">100</span>..<span class="hljs-number">107</span>} <span class="hljs-number">49</span> ; <span class="hljs-keyword">do</span>
-        <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> ; <span class="hljs-keyword">do</span>
-            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">${attr}</span>;<span class="hljs-variable">${bgcolor}</span>;<span class="hljs-variable">${fgcolor}</span>m&quot;</span>
-            <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot; <span class="hljs-variable">${attr}</span>;<span class="hljs-variable">${bgcolor}</span>;<span class="hljs-variable">${fgcolor}</span> &quot;</span>
+        <span class="hljs-keyword">for</span> style <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> ; <span class="hljs-keyword">do</span>
+            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">${style}</span>;<span class="hljs-variable">${bgcolor}</span>;<span class="hljs-variable">${fgcolor}</span>m&quot;</span>
+            <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot; <span class="hljs-variable">${style}</span>;<span class="hljs-variable">${bgcolor}</span>;<span class="hljs-variable">${fgcolor}</span> &quot;</span>
             <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[0m&quot;</span>
         <span class="hljs-keyword">done</span>
         <span class="hljs-built_in">echo</span> 
@@ -1404,9 +1410,6 @@ color_my2=$(tput bold)$(tput setaf <span class="hljs-number">1</span>)$(tput set
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_s_bold}</span>bold style<span class="hljs-variable">${color_reset}</span>&quot;</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_my1}</span>red foreground, blue background<span class="hljs-variable">${color_reset}</span>&quot;</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${color_my2}</span>bold style, red foreground, blue background<span class="hljs-variable">${color_reset}</span>&quot;</span>
-
-<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xB294; &#xC18D;&#xC131;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xAC8C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
-$(tput sgr0)
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; test &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xC774; &#xD130;&#xBBF8;&#xB110;&#xB85C; &#xB420;&#xACBD;&#xC6B0;&#xB9CC; &#xC18D;&#xC815;&#xC744; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">color_reset=$(tput sgr0)
