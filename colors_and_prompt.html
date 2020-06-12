@@ -1422,14 +1422,12 @@ color_red=<span class="hljs-variable">$color_reset</span>$(tput setaf <span clas
 color_blue=<span class="hljs-variable">$color_reset</span>$(tput setaf <span class="hljs-number">4</span>)
 
 <span class="hljs-function"><span class="hljs-title">err</span></span> () {
-    <span class="hljs-built_in">echo</span>
     [ -t <span class="hljs-number">2</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> -n <span class="hljs-variable">$color_red</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ERROR : <span class="hljs-variable">$@</span>&quot;</span>
     [ -t <span class="hljs-number">2</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> -n <span class="hljs-variable">$color_reset</span>
 } &gt;&amp; <span class="hljs-number">2</span>
 
 <span class="hljs-function"><span class="hljs-title">msg</span></span> () {
-    <span class="hljs-built_in">echo</span>
     [ -t <span class="hljs-number">1</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> -n <span class="hljs-variable">$color_blue</span>
     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;MESSAGE : <span class="hljs-variable">$@</span>&quot;</span>
     [ -t <span class="hljs-number">1</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> -n <span class="hljs-variable">$color_reset</span>
@@ -1437,7 +1435,7 @@ color_blue=<span class="hljs-variable">$color_reset</span>$(tput setaf <span cla
 
 msg <span class="hljs-string">&quot;stdout normal message&quot;</span>
 err <span class="hljs-string">&quot;stderr error message&quot;</span>
-<span class="hljs-built_in">echo</span>
+
 <span class="hljs-built_in">echo</span> DONE.
 </code></pre>
 <p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB85C; &#xC804;&#xCCB4; &#xC0C9;&#xC0C1; &#xD504;&#xB9B0;&#xD2B8; &#xD574;&#xBCF4;&#xAE30;</p>
