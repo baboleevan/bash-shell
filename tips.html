@@ -1710,7 +1710,7 @@ tmpfs                <span class="hljs-number">1.6</span>GiB      <span class="h
     <span class="hljs-keyword">esac</span>
     <span class="hljs-comment"># &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098;, &#xC635;&#xC158; &#xC778;&#xC218; &#xAC12;&#xC744; &#xBE7C;&#xBA39;&#xC73C;&#xBA74; &#xC885;&#xB8CC;</span>
     [ <span class="hljs-string">&quot;<span class="hljs-variable">$opt</span>&quot;</span> = <span class="hljs-string">&quot;?&quot;</span> ] &amp;&amp; <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
-    [[ <span class="hljs-variable">$OPTARG</span> =~ ^--?[[:alpha:]] ]] &amp;&amp; errArg <span class="hljs-string">&quot;<span class="hljs-variable">$OPTARG</span>&quot;</span>
+    [[ <span class="hljs-variable">$OPTARG</span> =~ ^- ]] &amp;&amp; errArg <span class="hljs-string">&quot;<span class="hljs-variable">$OPTARG</span>&quot;</span>
 <span class="hljs-keyword">done</span>
 
 <span class="hljs-built_in">test</span> -z <span class="hljs-string">&quot;<span class="hljs-variable">$field</span>&quot;</span>     &amp;&amp; field=<span class="hljs-number">1</span>
