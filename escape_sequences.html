@@ -1442,6 +1442,15 @@ bash$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;
 ABC
 </code></pre>
 <h1 id="quiz">Quiz</h1>
+<p>10 &#xC9C4;&#xC218; &#xAC12; <code>102 111 111</code>  &#xC73C;&#xB85C; &#xD45C;&#xD604;&#xB418;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC740; &#xC5B4;&#xB5A4; &#xB2E8;&#xC5B4;&#xC77C;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xBA3C;&#xC800; 10 &#xC9C4;&#xC218;&#xB97C; 16 &#xC9C4;&#xC218;&#xB85C; &#xBCC0;&#xD658;</span>
+$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;\%o\%o\%o&apos;</span> <span class="hljs-number">102</span> <span class="hljs-number">111</span> <span class="hljs-number">111</span>
+\<span class="hljs-number">146</span>\<span class="hljs-number">157</span>\<span class="hljs-number">157</span>
+
+$ <span class="hljs-built_in">printf</span> $(<span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;\%o\%o\%o&apos;</span> <span class="hljs-number">102</span> <span class="hljs-number">111</span> <span class="hljs-number">111</span>)
+foo
+</code></pre>
+<h1 id="2">2.</h1>
 <p>sh &#xC5D0;&#xC11C;&#xC758; echo &#xBA85;&#xB839;&#xACFC;, bash &#xC5D0;&#xC11C;&#xC758; echo &#xBA85;&#xB839;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xB824;&#xBA74;?</p>
 <pre><code class="lang-bash"><span class="hljs-keyword">if</span>   [ <span class="hljs-string">&quot;<span class="hljs-variable">$(echo &quot;x\c&quot;)</span>&quot;</span> = <span class="hljs-string">&quot;x&quot;</span> ];    <span class="hljs-keyword">then</span> ECHO=<span class="hljs-string">&quot;echo&quot;</span>      <span class="hljs-comment"># sh</span>
 <span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(echo -e &quot;x\c&quot;)</span>&quot;</span> = <span class="hljs-string">&quot;x&quot;</span> ]; <span class="hljs-keyword">then</span> ECHO=<span class="hljs-string">&quot;echo -e&quot;</span>   <span class="hljs-comment"># bash</span>
