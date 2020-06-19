@@ -1718,7 +1718,7 @@ emacs: standard input is not a tty
 <span class="hljs-comment"># &#xD30C;&#xC774;&#xD504;&#xC758; stdin &#xC740; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCE58;&#xD658;&#xC758; cat &#xACFC; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; --insert &#xC5D0; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</span>
 $ ls | emacs &lt; /dev/tty --insert &lt;(cat)
 
-$ <span class="hljs-built_in">alias</span> emacs-=<span class="hljs-string">&quot;emacs &lt; /dev/tty --insert &lt;(cat)&quot;</span>
+$ <span class="hljs-built_in">alias</span> emacs-=<span class="hljs-string">&quot;emacs &lt; /dev/tty --insert &lt;(cat) -f fundamental-mode&quot;</span>
 
 $ ls | emacs-
 </code></pre>
