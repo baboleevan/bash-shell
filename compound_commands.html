@@ -1426,8 +1426,9 @@ $ <span class="hljs-keyword">while</span> <span class="hljs-built_in">test</span
 bash: <span class="hljs-built_in">test</span>: =: unary operator expected
 $ <span class="hljs-built_in">echo</span> $?
 <span class="hljs-number">1</span>            <span class="hljs-comment"># false &#xC758; &#xC885;&#xB8CC;&#xC0C1;&#xD0DC;&#xAC12;</span>
+
 $ <span class="hljs-keyword">while</span> <span class="hljs-built_in">test</span> <span class="hljs-number">100</span> = <span class="hljs-number">100</span>; <span class="hljs-keyword">do</span> <span class="hljs-literal">false</span>; <span class="hljs-built_in">break</span>; <span class="hljs-keyword">done</span>   <span class="hljs-comment"># &#xBC18;&#xBCF5;&#xBB38;&#xC774; break &#xC5D0;&#xC758;&#xD574; &#xC885;&#xB8CC;&#xB420; &#xACBD;&#xC6B0;</span>
-$ <span class="hljs-built_in">echo</span> $?                                       <span class="hljs-comment"># &#xC885;&#xB8CC;&#xC0C1;&#xD0DC;&#xAC12;&#xC740; 0 &#xC774;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> $?                                       <span class="hljs-comment"># &#xC885;&#xB8CC; &#xC0C1;&#xD0DC; &#xAC12;&#xC740; 0 &#xC774;&#xB2E4;.</span>
 <span class="hljs-number">0</span>
 
 $ <span class="hljs-built_in">set</span> -- <span class="hljs-number">100</span>
